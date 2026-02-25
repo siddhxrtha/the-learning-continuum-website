@@ -1,0 +1,171 @@
+:root {
+  --tlc-blue: #103f7a;
+  --tlc-blue-dark: #0b2f59;
+  --tlc-red: #b3262d;
+  --tlc-text: #213247;
+  --tlc-muted: #5d6b7a;
+  --tlc-surface: #f4f7fb;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--tlc-text);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+.section-space {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 992px) {
+  .section-space {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.navbar-brand {
+  color: var(--tlc-blue-dark);
+}
+
+.brand-mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--tlc-red);
+}
+
+.nav-link {
+  color: var(--tlc-text);
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--tlc-blue);
+}
+
+.btn-primary {
+  background-color: var(--tlc-blue);
+  border-color: var(--tlc-blue);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--tlc-blue-dark);
+  border-color: var(--tlc-blue-dark);
+}
+
+.btn-outline-primary {
+  color: var(--tlc-blue);
+  border-color: var(--tlc-blue);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--tlc-blue);
+  border-color: var(--tlc-blue);
+}
+
+.hero-section {
+  background-image: linear-gradient(105deg, rgba(11, 47, 89, 0.82), rgba(11, 47, 89, 0.56)), url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  min-height: calc(100vh - 72px);
+}
+
+.hero-content {
+  min-height: calc(100vh - 72px);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.hero-badge {
+  background-color: var(--tlc-red);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.result-image {
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.result-highlight {
+  background-color: #eaf1fa;
+  border-left: 4px solid var(--tlc-blue);
+}
+
+.result-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.result-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.52rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--tlc-blue);
+}
+
+.programme-card {
+  border-top: 4px solid var(--tlc-blue) !important;
+}
+
+.programme-link {
+  color: var(--tlc-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.programme-link:hover,
+.programme-link:focus {
+  color: var(--tlc-blue-dark);
+}
+
+.teacher-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #8fa2b8;
+}
+
+.cta-section {
+  background-color: var(--tlc-blue);
+}
+
+.cta-section .btn-light {
+  color: var(--tlc-blue);
+  font-weight: 600;
+}
+
+.footer-section {
+  background-color: #ffffff;
+}
+
+.map-placeholder {
+  min-height: 220px;
+  border: 1px solid #d6dfeb;
+  background-color: var(--tlc-surface);
+  color: var(--tlc-muted);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+}
