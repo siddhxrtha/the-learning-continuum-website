@@ -1,116 +1,92 @@
 document.addEventListener("DOMContentLoaded", function () {
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  initTrustCards(reducedMotion);
+  initScrollProgress();
+  initHeroParallax(reducedMotion);
+  initRevealGroup(".js-reveal", reducedMotion);
+  initTrustCounters(reducedMotion);
+  initStatCounters(reducedMotion);
   initReviewModule(reducedMotion);
 });
 
-function initTrustCards(reducedMotion) {
-  var cards = document.querySelectorAll(".js-trust-card");
-  if (!cards.length) {
+function initScrollProgress() {
+  var progressBar = document.querySelector(".scroll-progress");
+  if (!progressBar) {
     return;
   }
 
-  cards.forEach(function (card) {
-    card.classList.add("will-reveal");
-  });
+  function updateProgress() {
+    var doc = document.documentElement;
+    var scrollTop = window.scrollY || doc.scrollTop;
+    var maxScroll = Math.max(doc.scrollHeight - window.innerHeight, 1);
+    var percent = Math.min((scrollTop / maxScroll) * 100, 100);
+    progressBar.style.width = percent + "%";
+  }
 
-  if (reducedMotion || !("IntersectionObserver" in window)) {
-    cards.forEach(function (card) {
-      card.classList.remove("will-reveal");
-      card.classList.add("is-visible");
-      animateCounters(card, reducedMotion);
-    });
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+}
+
+function initHeroParallax(reducedMotion) {
+  if (reducedMotion) {
     return;
   }
 
-  var observer = new IntersectionObserver(
-    function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) {
-          return;
-        }
+  var wraps = document.querySelectorAll(".js-parallax-wrap");
+  if (!wraps.length) {
+    return;
+  }
 
-        var card = entry.target;
-        var delay = Number(card.dataset.delay || 0);
+  wraps.forEach(function (wrap) {
+    var layers = wrap.querySelectorAll("[data-parallax]:not(.float-orb)");
+    if (!layers.length) {
+      return;
+    }
 
-        window.setTimeout(function () {
-          card.classList.remove("will-reveal");
-          card.classList.add("is-visible");
-          animateCounters(card, reducedMotion);
-        }, delay);
+    var pointerX = 0;
+    var pointerY = 0;
 
-        obs.unobserve(card);
+    function renderLayers() {
+      var rect = wrap.getBoundingClientRect();
+      var viewportProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      var scrollShift = (viewportProgress - 0.5) * 24;
+
+      layers.forEach(function (layer) {
+        var depth = Number(layer.dataset.parallax || 0.1);
+        var tx = pointerX * depth * 22;
+        var ty = pointerY * depth * 16 + scrollShift * depth;
+        layer.style.transform = "translate3d(" + tx.toFixed(2) + "px," + ty.toFixed(2) + "px,0)";
       });
-    },
-    {
-      threshold: 0.25,
-      rootMargin: "0px 0px -40px 0px"
     }
-  );
 
-  cards.forEach(function (card) {
-    observer.observe(card);
-  });
-
-  window.setTimeout(function () {
-    cards.forEach(function (card) {
-      if (!card.classList.contains("is-visible")) {
-        card.classList.remove("will-reveal");
-        card.classList.add("is-visible");
-        animateCounters(card, reducedMotion);
-      }
+    wrap.addEventListener("mousemove", function (event) {
+      var rect = wrap.getBoundingClientRect();
+      pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+      window.requestAnimationFrame(renderLayers);
     });
-  }, 1200);
-}
 
-function animateCounters(scope, reducedMotion) {
-  var counters = scope.querySelectorAll(".js-counter");
+    wrap.addEventListener("mouseleave", function () {
+      pointerX = 0;
+      pointerY = 0;
+      window.requestAnimationFrame(renderLayers);
+    });
 
-  counters.forEach(function (counter) {
-    if (counter.dataset.counted === "true") {
-      return;
-    }
+    window.addEventListener(
+      "scroll",
+      function () {
+        window.requestAnimationFrame(renderLayers);
+      },
+      { passive: true }
+    );
 
-    var target = Number(counter.dataset.target || 0);
-    var suffix = counter.dataset.suffix || "";
-    var duration = 900;
-    var startTime = null;
-
-    counter.dataset.counted = "true";
-
-    if (reducedMotion) {
-      counter.textContent = String(target) + suffix;
-      return;
-    }
-
-    function tick(timestamp) {
-      if (!startTime) {
-        startTime = timestamp;
-      }
-
-      var progress = Math.min((timestamp - startTime) / duration, 1);
-      var value = Math.floor(progress * target);
-      counter.textContent = String(value) + suffix;
-
-      if (progress < 1) {
-        window.requestAnimationFrame(tick);
-      } else {
-        counter.textContent = String(target) + suffix;
-      }
-    }
-
-    window.requestAnimationFrame(tick);
+    renderLayers();
   });
 }
 
-function initReviewModule(reducedMotion) {
-  initReviewReveal(reducedMotion);
-  initReviewAutoScroll(reducedMotion);
-}
-
-function initReviewReveal(reducedMotion) {
-  var items = document.querySelectorAll(".js-review-reveal");
+function initRevealGroup(selector, reducedMotion) {
+  var items = document.querySelectorAll(selector);
   if (!items.length) {
     return;
   }
@@ -127,32 +103,35 @@ function initReviewReveal(reducedMotion) {
     return;
   }
 
-  var revealObserver = new IntersectionObserver(
+  var observer = new IntersectionObserver(
     function (entries, obs) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) {
           return;
         }
 
-        var el = entry.target;
-        var delay = Number(el.dataset.delay || 0);
+        var element = entry.target;
+        var delay = Number(element.dataset.revealDelay || 0);
+
         window.setTimeout(function () {
-          el.classList.remove("will-reveal");
-          el.classList.add("is-visible");
+          element.classList.remove("will-reveal");
+          element.classList.add("is-visible");
         }, delay);
-        obs.unobserve(el);
+
+        obs.unobserve(element);
       });
     },
     {
-      threshold: 0.2,
-      rootMargin: "0px 0px -35px 0px"
+      threshold: 0.16,
+      rootMargin: "0px 0px -40px 0px"
     }
   );
 
   items.forEach(function (item) {
-    revealObserver.observe(item);
+    observer.observe(item);
   });
 
+  // Fallback: if any element misses intersection due browser edge-cases, reveal anyway.
   window.setTimeout(function () {
     items.forEach(function (item) {
       if (!item.classList.contains("is-visible")) {
@@ -160,7 +139,113 @@ function initReviewReveal(reducedMotion) {
         item.classList.add("is-visible");
       }
     });
-  }, 1400);
+  }, 1700);
+}
+
+function initTrustCounters(reducedMotion) {
+  var counters = document.querySelectorAll(".js-counter");
+  initCounterGroup(counters, reducedMotion, 1000, 0.3);
+}
+
+function initStatCounters(reducedMotion) {
+  var counters = document.querySelectorAll(".js-stat-counter");
+  initCounterGroup(counters, reducedMotion, 1200, 0.35);
+}
+
+function initCounterGroup(counters, reducedMotion, duration, threshold) {
+  if (!counters.length) {
+    return;
+  }
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    counters.forEach(function (counter) {
+      animateCounterElement(counter, true, duration);
+    });
+    return;
+  }
+
+  var counterObserver = new IntersectionObserver(
+    function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        var target = entry.target;
+        animateCounterElement(target, false, duration);
+        obs.unobserve(target);
+      });
+    },
+    {
+      threshold: threshold
+    }
+  );
+
+  counters.forEach(function (counter) {
+    counterObserver.observe(counter);
+  });
+
+  window.setTimeout(function () {
+    counters.forEach(function (counter) {
+      animateCounterElement(counter, false, duration);
+    });
+  }, 1800);
+}
+
+function animateCounterElement(counter, reducedMotion, duration) {
+  if (counter.dataset.counted === "true") {
+    return;
+  }
+
+  var target = Number(counter.dataset.target || 0);
+  var suffix = counter.dataset.suffix || "";
+  var prefix = counter.dataset.prefix || "";
+  var decimals = Number(counter.dataset.decimals || 0);
+  var scale = Number(counter.dataset.scale || 1);
+  var startTime = null;
+
+  function formatValue(raw) {
+    var displayed = raw / scale;
+    return (
+      prefix +
+      displayed.toLocaleString("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }) +
+      suffix
+    );
+  }
+
+  counter.dataset.counted = "true";
+
+  if (reducedMotion) {
+    counter.textContent = formatValue(target);
+    return;
+  }
+
+  function tick(timestamp) {
+    if (!startTime) {
+      startTime = timestamp;
+    }
+
+    var progress = Math.min((timestamp - startTime) / duration, 1);
+    var currentValue = target * progress;
+    counter.textContent = formatValue(currentValue);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(tick);
+      return;
+    }
+
+    counter.textContent = formatValue(target);
+  }
+
+  window.requestAnimationFrame(tick);
+}
+
+function initReviewModule(reducedMotion) {
+  initRevealGroup(".js-review-reveal", reducedMotion);
+  initReviewAutoScroll(reducedMotion);
 }
 
 function initReviewAutoScroll(reducedMotion) {
@@ -174,6 +259,10 @@ function initReviewAutoScroll(reducedMotion) {
     return;
   }
 
+  if (reducedMotion) {
+    return;
+  }
+
   cards.forEach(function (card) {
     var clone = card.cloneNode(true);
     clone.classList.remove("js-review-reveal", "will-reveal");
@@ -183,19 +272,21 @@ function initReviewAutoScroll(reducedMotion) {
   });
 
   var halfWidth = Math.max(track.scrollWidth / 2, 1);
-  var direction = 1;
-  var speed = window.innerWidth < 768 ? 0.36 : 0.48;
-  var paused = reducedMotion;
+  var direction = -1; // left-to-right movement in viewport
+  var speed = window.innerWidth < 768 ? 0.34 : 0.5;
+  var paused = false;
   var rafId = null;
+
+  track.scrollLeft = halfWidth * 0.5;
 
   function tick() {
     if (!paused) {
       track.scrollLeft += speed * direction;
 
-      if (track.scrollLeft >= halfWidth) {
-        track.scrollLeft -= halfWidth;
-      } else if (track.scrollLeft < 0) {
+      if (track.scrollLeft <= 1) {
         track.scrollLeft += halfWidth;
+      } else if (track.scrollLeft >= halfWidth) {
+        track.scrollLeft -= halfWidth;
       }
     }
 
@@ -218,10 +309,6 @@ function initReviewAutoScroll(reducedMotion) {
   track.addEventListener("focusout", resume);
   track.addEventListener("touchstart", pause, { passive: true });
   track.addEventListener("touchend", resume, { passive: true });
-
-  if (reducedMotion) {
-    return;
-  }
 
   window.addEventListener("blur", pause);
   window.addEventListener("focus", resume);

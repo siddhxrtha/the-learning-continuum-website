@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm sticky-top" aria-label="Main navigation">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm sticky-top glass-nav" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="#home">
         <span class="brand-mark" aria-hidden="true"></span>
@@ -29,7 +30,7 @@
           <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-grid d-lg-block">
-            <a class="btn btn-primary px-4" href="#contact">Book Consultation</a>
+            <a class="btn btn-primary px-4 btn-micro" href="#contact">Book Consultation</a>
           </li>
         </ul>
       </div>
@@ -37,16 +38,78 @@
   </nav>
 
   <header id="home" class="hero-section">
-    <div class="hero-overlay">
+    <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="5200" data-bs-pause="false" data-bs-touch="true">
+      <div class="carousel-indicators hero-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="hero-slide" style="--hero-bg:url('https://cashmoneysid.sirv.com/Images/the-learning-continuum/img01.jpg'); --hero-pos:center center;"></div>
+        </div>
+        <div class="carousel-item">
+          <div class="hero-slide" style="--hero-bg:url('https://www.explico.sg/blog/wp-content/uploads/2022/04/Explic-image-blog14343-1024x683.jpg'); --hero-pos:center center;"></div>
+        </div>
+        <div class="carousel-item">
+          <div class="hero-slide" style="--hero-bg:url('https://www.teachermagazine.com/assets/images/teacher/Insights-from-PISA-Singapore%E2%80%99s-home-based-learning-initiative.jpg'); --hero-pos:center center;"></div>
+        </div>
+        <div class="carousel-item">
+          <div class="hero-slide" style="--hero-bg:url('https://miro.medium.com/1*8UMegIPQJa2A7V757K8lng.jpeg'); --hero-pos:center center;"></div>
+        </div>
+        <div class="carousel-item">
+          <div class="hero-slide" style="--hero-bg:url('https://isomer-user-content.by.gov.sg/85/c935ebd4-e5c5-495a-a195-ead381d25b8e/increased_attention.jpg'); --hero-pos:center center;"></div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev hero-control" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous hero slide">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next hero-control" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next hero slide">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="hero-overlay-content">
+      <div class="hero-floating-icons" aria-hidden="true">
+        <span class="float-orb"><i class="bi bi-mortarboard-fill"></i></span>
+        <span class="float-orb"><i class="bi bi-patch-check-fill"></i></span>
+        <span class="float-orb"><i class="bi bi-book-half"></i></span>
+      </div>
       <div class="container">
         <div class="row align-items-center hero-content">
-          <div class="col-xl-7 col-lg-8 text-white">
-            <span class="badge hero-badge rounded-pill mb-3">Established Since 2006</span>
-            <h1 class="display-5 fw-bold mb-3">Proven Academic Excellence Since 2006</h1>
-            <p class="lead mb-4">PSLE, N &amp; O Level Specialists with a Strong Track Record of Student Success.</p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <a class="btn btn-primary btn-lg px-4" href="#contact">Book Consultation</a>
-              <a class="btn btn-outline-light btn-lg px-4" href="#programmes">View Programmes</a>
+          <div class="col-xl-8 col-lg-9 text-white js-reveal" data-reveal="up">
+            <div class="hero-glass">
+              <span class="badge hero-badge rounded-pill mb-3">Established Since 2006</span>
+              <h1 class="display-5 fw-bold mb-3">Proven Academic Excellence Since 2006</h1>
+              <p class="lead mb-4">PSLE, N &amp; O Level Specialists with a Strong Track Record of Student Success.</p>
+              <div class="d-flex flex-column flex-sm-row gap-3">
+                <a class="btn btn-primary btn-lg px-4 btn-micro" href="#contact">Book Consultation</a>
+                <a class="btn btn-outline-light btn-lg px-4 btn-micro" href="#programmes">View Programmes</a>
+              </div>
+              <div class="row g-3 mt-4 hero-metrics">
+                <div class="col-sm-4">
+                  <div class="hero-metric-item">
+                    <p class="hero-metric-number mb-1"><span class="js-stat-counter" data-target="18" data-suffix="+">0</span></p>
+                    <p class="hero-metric-label mb-0">Years of Trusted Teaching</p>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="hero-metric-item">
+                    <p class="hero-metric-number mb-1"><span class="js-stat-counter" data-target="5000" data-suffix="+">0</span></p>
+                    <p class="hero-metric-label mb-0">Students Guided</p>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="hero-metric-item">
+                    <p class="hero-metric-number mb-1"><span class="js-stat-counter" data-target="49" data-scale="10" data-decimals="1">0</span>/5</p>
+                    <p class="hero-metric-label mb-0">Parent Satisfaction</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -55,7 +118,7 @@
   </header>
   <section class="section-space trust-premium-section border-bottom" aria-label="Trust validation highlights">
     <div class="container">
-      <div class="row justify-content-center mb-4 mb-lg-5">
+      <div class="row justify-content-center mb-4 mb-lg-5 js-reveal" data-reveal="up">
         <div class="col-lg-8 text-center">
           <p class="trust-kicker mb-2">Parent Confidence, Built Over Decades</p>
           <h2 class="h3 fw-bold mb-0 trust-title">A Track Record Families in Singapore Can Rely On</h2>
@@ -63,7 +126,7 @@
       </div>
       <div class="row g-4 text-center">
         <div class="col-sm-6 col-lg-3">
-          <article class="trust-premium-card h-100 js-trust-card" data-delay="0">
+          <article class="trust-premium-card h-100 js-trust-card js-reveal" data-delay="0" data-reveal-delay="0">
             <div class="trust-premium-icon" aria-hidden="true">
               <i class="bi bi-star-fill"></i>
             </div>
@@ -72,7 +135,7 @@
           </article>
         </div>
         <div class="col-sm-6 col-lg-3">
-          <article class="trust-premium-card h-100 js-trust-card" data-delay="90">
+          <article class="trust-premium-card h-100 js-trust-card js-reveal" data-delay="90" data-reveal-delay="90">
             <div class="trust-premium-icon" aria-hidden="true">
               <i class="bi bi-calendar2-check-fill"></i>
             </div>
@@ -81,7 +144,7 @@
           </article>
         </div>
         <div class="col-sm-6 col-lg-3">
-          <article class="trust-premium-card h-100 js-trust-card" data-delay="180">
+          <article class="trust-premium-card h-100 js-trust-card js-reveal" data-delay="180" data-reveal-delay="180">
             <div class="trust-premium-icon" aria-hidden="true">
               <i class="bi bi-mortarboard-fill"></i>
             </div>
@@ -90,7 +153,7 @@
           </article>
         </div>
         <div class="col-sm-6 col-lg-3">
-          <article class="trust-premium-card h-100 js-trust-card" data-delay="270">
+          <article class="trust-premium-card h-100 js-trust-card js-reveal" data-delay="270" data-reveal-delay="270">
             <div class="trust-premium-icon" aria-hidden="true">
               <i class="bi bi-person-badge-fill"></i>
             </div>
@@ -105,10 +168,10 @@
   <section id="results" class="section-space bg-light">
     <div class="container">
       <div class="row g-4 g-lg-5 align-items-center">
-        <div class="col-lg-6">
+        <div class="col-lg-6 js-reveal" data-reveal="left">
           <img class="Sirv img-fluid rounded-4 shadow-sm w-100 result-image" data-src="https://cashmoneysid.sirv.com/Images/the-learning-continuum/img01.jpg" alt="Students celebrating graduation success">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 js-reveal" data-reveal="right" data-reveal-delay="80">
           <h2 class="fw-bold mb-3">Proven PSLE, N &amp; O Level Exams Track Record</h2>
           <div class="result-highlight rounded-3 p-3 p-lg-4 mb-4">
             <p class="mb-0 fw-semibold">Trusted by Families Since 2006</p>
@@ -423,7 +486,7 @@
         </div>
 
         <div class="text-center mt-4">
-          <a class="btn btn-outline-primary px-4" href="#" aria-label="View all reviews on Google">View All Reviews on Google</a>
+          <a class="btn btn-outline-primary px-4 btn-micro" href="#" aria-label="View all reviews on Google">View All Reviews on Google</a>
         </div>
       </div>
     </div>
@@ -431,12 +494,12 @@
 
   <section id="programmes" class="section-space bg-light">
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="text-center mb-5 js-reveal" data-reveal="up">
         <h2 class="fw-bold mb-2">Our Academic Programmes</h2>
       </div>
       <div class="row g-4">
         <div class="col-md-6 col-lg-4">
-          <article class="card h-100 programme-card border-0 rounded-4 shadow-sm">
+          <article class="card h-100 programme-card border-0 rounded-4 shadow-sm elevate-card js-reveal" data-reveal-delay="0">
             <div class="card-body p-4">
               <h3 class="h5 fw-semibold mb-3">PSLE Excellence Prep</h3>
               <p class="mb-4 text-secondary">Focused mastery of core subjects with intensive mock exams and time-management drills.</p>
@@ -445,7 +508,7 @@
           </article>
         </div>
         <div class="col-md-6 col-lg-4">
-          <article class="card h-100 programme-card border-0 rounded-4 shadow-sm">
+          <article class="card h-100 programme-card border-0 rounded-4 shadow-sm elevate-card js-reveal" data-reveal-delay="90">
             <div class="card-body p-4">
               <h3 class="h5 fw-semibold mb-3">N-Level / O-Level Intensive</h3>
               <p class="mb-4 text-secondary">Deep-dive lessons aligned to syllabus requirements with exam strategies for stronger outcomes.</p>
@@ -454,7 +517,7 @@
           </article>
         </div>
         <div class="col-md-6 col-lg-4">
-          <article class="card h-100 programme-card border-0 rounded-4 shadow-sm">
+          <article class="card h-100 programme-card border-0 rounded-4 shadow-sm elevate-card js-reveal" data-reveal-delay="170">
             <div class="card-body p-4">
               <h3 class="h5 fw-semibold mb-3">Foundation &amp; Mastery</h3>
               <p class="mb-4 text-secondary">Reinforcement classes for students needing stronger conceptual understanding and confidence.</p>
@@ -468,12 +531,12 @@
 
   <section id="teachers" class="section-space">
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="text-center mb-5 js-reveal" data-reveal="up">
         <h2 class="fw-bold mb-2">Our Specialist Tutors</h2>
       </div>
       <div class="row g-4">
         <div class="col-6 col-lg-3">
-          <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <article class="card h-100 border-0 shadow-sm rounded-4 text-center elevate-card js-reveal" data-reveal-delay="0">
             <div class="card-body p-4">
               <div class="teacher-avatar mx-auto mb-3">JW</div>
               <h3 class="h6 fw-semibold mb-1">Mr. Jeremy Wong</h3>
@@ -483,7 +546,7 @@
           </article>
         </div>
         <div class="col-6 col-lg-3">
-          <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <article class="card h-100 border-0 shadow-sm rounded-4 text-center elevate-card js-reveal" data-reveal-delay="90">
             <div class="card-body p-4">
               <div class="teacher-avatar mx-auto mb-3">ET</div>
               <h3 class="h6 fw-semibold mb-1">Ms. Elaine Tan</h3>
@@ -493,7 +556,7 @@
           </article>
         </div>
         <div class="col-6 col-lg-3">
-          <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <article class="card h-100 border-0 shadow-sm rounded-4 text-center elevate-card js-reveal" data-reveal-delay="180">
             <div class="card-body p-4">
               <div class="teacher-avatar mx-auto mb-3">SK</div>
               <h3 class="h6 fw-semibold mb-1">Dr. Samuel Koh</h3>
@@ -503,7 +566,7 @@
           </article>
         </div>
         <div class="col-6 col-lg-3">
-          <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <article class="card h-100 border-0 shadow-sm rounded-4 text-center elevate-card js-reveal" data-reveal-delay="250">
             <div class="card-body p-4">
               <div class="teacher-avatar mx-auto mb-3">CN</div>
               <h3 class="h6 fw-semibold mb-1">Mrs. Clara Ng</h3>
@@ -516,14 +579,14 @@
     </div>
   </section>
 
-  <section class="section-space cta-section text-white text-center">
+  <section class="section-space cta-section text-white text-center js-parallax-wrap">
     <div class="container">
-      <h2 class="fw-bold mb-3">Ready to Support Your Child's Academic Journey?</h2>
-      <p class="lead mb-4">Join over 5,000+ students who have achieved their academic goals with us.</p>
-      <a class="btn btn-light btn-lg px-4 mb-4" href="#contact">Book Consultation Today</a>
+      <h2 class="fw-bold mb-3 js-reveal" data-reveal="up">Ready to Support Your Child's Academic Journey?</h2>
+      <p class="lead mb-4 js-reveal" data-reveal="up" data-reveal-delay="80">Join over 5,000+ students who have achieved their academic goals with us.</p>
+      <a class="btn btn-light btn-lg px-4 mb-4 btn-micro js-reveal" href="#contact" data-reveal="up" data-reveal-delay="140">Book Consultation Today</a>
       <div class="d-flex flex-column flex-sm-row justify-content-center gap-4">
-        <p class="mb-0 fw-semibold">18+ Years Experience</p>
-        <p class="mb-0 fw-semibold">5k+ Happy Students</p>
+        <p class="mb-0 fw-semibold"><span class="js-stat-counter" data-target="18" data-suffix="+">0</span> Years Experience</p>
+        <p class="mb-0 fw-semibold"><span class="js-stat-counter" data-target="5" data-suffix="k+">0</span> Happy Students</p>
       </div>
     </div>
   </section>
@@ -531,7 +594,7 @@
   <footer id="contact" class="footer-section pt-5 pb-4">
     <div class="container">
       <div class="row g-4">
-        <div class="col-lg-6">
+        <div class="col-lg-6 js-reveal" data-reveal="up">
           <h2 class="h5 fw-bold mb-3">The Learning Continuum</h2>
           <div class="p-3 p-lg-4 rounded-4 border bg-light mb-3">
             <p class="small text-uppercase fw-semibold text-primary mb-2">From The Learning Continuum Pte Ltd</p>
@@ -542,7 +605,7 @@
           <p class="mb-2">WhatsApp: +65 9123 4567</p>
           <p class="mb-0">Email: hello@learningcontinuum.sg</p>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 js-reveal" data-reveal="up" data-reveal-delay="100">
           <div class="map-placeholder rounded-4">
             <p class="mb-0 fw-semibold">Embedded Map Placeholder</p>
           </div>
