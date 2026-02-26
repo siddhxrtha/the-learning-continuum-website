@@ -9,6 +9,10 @@
   box-shadow: 0 0 10px rgba(16, 63, 122, 0.35);
 }
 
+:root {
+  --tlc-nav-height: 96px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,6 +20,7 @@ html {
 body {
   font-family: "Segoe UI", "Source Sans Pro", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.1px;
+  overflow-x: clip;
 }
 
 h1,
@@ -32,13 +37,30 @@ section {
   position: relative;
 }
 
+site-navbar {
+  display: block;
+  height: 0;
+}
+
 .tlc-navbar {
   font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1080;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
   background: transparent;
   animation: nav-enter 0.5s ease both;
   transition: padding 0.25s ease;
+}
+
+.nav-overlap-section {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(var(--tlc-nav-height) * -1);
+  padding-top: var(--tlc-nav-height);
 }
 
 .tlc-navbar.is-scrolled {
@@ -252,7 +274,7 @@ section {
 }
 
 .hero-section {
-  --hero-fixed-height: clamp(520px, 82vh, 760px);
+  --hero-fixed-height: clamp(660px, 92vh, 980px);
   position: relative;
   overflow: clip;
   background: #0b2f59;
@@ -331,6 +353,11 @@ section {
   min-height: 100%;
   padding-top: clamp(20px, 2.8vh, 36px);
   padding-bottom: clamp(20px, 2.8vh, 36px);
+}
+
+.nav-overlap-section.hero-section .hero-overlay-content .hero-content {
+  padding-top: calc(var(--tlc-nav-height) + clamp(36px, 6.5vh, 84px));
+  padding-bottom: clamp(24px, 4vh, 46px);
 }
 
 .hero-overlay-content .hero-glass,
@@ -1186,7 +1213,11 @@ section {
 
 @media (max-width: 767.98px) {
   .hero-section {
-    --hero-fixed-height: clamp(440px, 74vh, 620px);
+    --hero-fixed-height: clamp(560px, 85vh, 820px);
+  }
+
+  .nav-overlap-section.hero-section .hero-overlay-content .hero-content {
+    padding-top: calc(var(--tlc-nav-height) + clamp(22px, 4.8vh, 44px));
   }
 
   .review-source-google {

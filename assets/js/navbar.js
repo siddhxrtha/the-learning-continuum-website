@@ -44,6 +44,15 @@ function initSiteNavbar(navRoot) {
 
   function updateScrollState() {
     navRoot.classList.toggle("is-scrolled", window.scrollY > 8);
+    syncNavHeightVar();
+  }
+
+  function syncNavHeightVar() {
+    var navHeight = Math.ceil(navRoot.getBoundingClientRect().height);
+    if (!navHeight) {
+      return;
+    }
+    document.documentElement.style.setProperty("--tlc-nav-height", navHeight + "px");
   }
 
   updateScrollState();
@@ -51,7 +60,11 @@ function initSiteNavbar(navRoot) {
 
   window.addEventListener("scroll", updateScrollState, { passive: true });
   window.addEventListener("scroll", updateActiveSection, { passive: true });
-  window.addEventListener("resize", updateActiveSection);
+  window.addEventListener("resize", function () {
+    updateActiveSection();
+    syncNavHeightVar();
+  });
+  window.addEventListener("load", syncNavHeightVar);
 
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
