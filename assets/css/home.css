@@ -18,19 +18,88 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", "Source Sans Pro", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 0.1px;
+  font-family: var(--tlc-font-sans);
+  font-weight: 400;
+  letter-spacing: 0.02px;
+  line-height: 1.68;
   overflow-x: clip;
 }
 
 h1,
 h2,
 h3,
-h4,
+h4 {
+  font-family: var(--tlc-font-serif);
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+  color: #1e3147;
+}
+
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section h4,
+.cta-section h1,
+.cta-section h2,
+.cta-section h3,
+.cta-section h4 {
+  color: #ffffff;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 5.6vw, 5.2rem);
+  line-height: 1.06;
+}
+
+h2:not(.h1):not(.h3):not(.h4):not(.h5):not(.h6) {
+  font-size: clamp(1.95rem, 3.1vw, 3rem);
+}
+
+h3:not(.h1):not(.h2):not(.h4):not(.h5):not(.h6) {
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+}
+
+h4:not(.h1):not(.h2):not(.h3):not(.h5):not(.h6) {
+  font-size: clamp(1.28rem, 1.6vw, 1.52rem);
+}
+
 h5,
-h6 {
-  font-family: Cambria, "Times New Roman", serif;
-  letter-spacing: -0.25px;
+h6,
+.h5,
+.h6 {
+  font-family: var(--tlc-font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p,
+li,
+small,
+label,
+input,
+textarea,
+select,
+.lead,
+.nav-link,
+.btn,
+.tlc-nav-cta,
+.tlc-brand {
+  font-family: var(--tlc-font-sans);
+}
+
+p,
+li:not(.nav-item) {
+  line-height: 1.7;
 }
 
 section {
@@ -43,7 +112,7 @@ site-navbar {
 }
 
 .tlc-navbar {
-  font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+  font-family: var(--tlc-font-sans);
   position: fixed;
   top: 0;
   left: 0;
@@ -99,9 +168,8 @@ site-navbar {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.1) 50%, transparent 80%);
-  transform: translateX(-115%);
-  animation: nav-sheen 7.2s ease-in-out infinite;
+  background: linear-gradient(100deg, transparent 22%, rgba(255, 255, 255, 0.07) 50%, transparent 78%);
+  transform: none;
   pointer-events: none;
 }
 
@@ -138,7 +206,7 @@ site-navbar {
 
 .tlc-brand-text {
   font-size: 0.94rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0;
   white-space: nowrap;
 }
@@ -154,7 +222,7 @@ site-navbar {
 
 .tlc-nav-links .nav-link {
   color: #eef2f7;
-  font-size: 0.9rem;
+  font-size: 0.96rem;
   font-weight: 500;
   border-radius: 999px;
   padding: 0.46rem 0.82rem;
@@ -208,7 +276,6 @@ site-navbar {
   font-weight: 700;
   white-space: nowrap;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  animation: cta-soft-pulse 3s ease-in-out infinite;
 }
 
 .tlc-nav-cta:hover,
@@ -249,27 +316,6 @@ site-navbar {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes nav-sheen {
-  0%,
-  100% {
-    transform: translateX(-115%);
-  }
-  55%,
-  65% {
-    transform: translateX(130%);
-  }
-}
-
-@keyframes cta-soft-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.14);
   }
 }
 
@@ -360,6 +406,16 @@ site-navbar {
   padding-bottom: clamp(24px, 4vh, 46px);
 }
 
+.hero-glass h1 {
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-weight: 700;
+  letter-spacing: -0.024em;
+  line-height: 1.03;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-overlay-content .hero-glass,
 .hero-overlay-content .btn {
   pointer-events: auto;
@@ -385,7 +441,27 @@ site-navbar {
 }
 
 .hero-glass .lead {
+  font-family: var(--tlc-font-sans);
+  font-size: clamp(1.1rem, 1.5vw, 1.52rem);
+  font-weight: 400;
+  letter-spacing: 0.002em;
+  line-height: 1.58;
   max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-space h2 {
+  letter-spacing: -0.017em;
+  line-height: 1.14;
+}
+
+.trust-title,
+.programmes-head h2,
+.reviews-authority-section h2,
+#teachers h2,
+#results h2 {
+  max-width: 20ch;
   margin-left: auto;
   margin-right: auto;
 }
