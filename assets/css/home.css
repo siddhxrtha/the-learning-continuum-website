@@ -592,6 +592,182 @@ section {
     linear-gradient(180deg, #f8fafd 0%, #ffffff 36%);
 }
 
+.programmes-section {
+  position: relative;
+  background:
+    radial-gradient(68% 80% at 12% 0%, rgba(16, 63, 122, 0.08), rgba(16, 63, 122, 0)),
+    radial-gradient(60% 80% at 100% 100%, rgba(27, 88, 166, 0.09), rgba(27, 88, 166, 0)),
+    linear-gradient(180deg, #f8fbff 0%, #f2f6fb 100%);
+}
+
+.programmes-head {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.programmes-kicker {
+  display: inline-block;
+  padding: 0.34rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 63, 122, 0.16);
+  color: #103f7a;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.programmes-subtitle {
+  color: #5c6d7f;
+}
+
+.programmes-grid {
+  align-items: stretch;
+}
+
+.programmes-section .programme-card {
+  --programme-accent: #1f62b4;
+  --programme-tint: rgba(31, 98, 180, 0.08);
+  position: relative;
+  overflow: hidden;
+  border-top: 0 !important;
+  border: 1px solid rgba(16, 63, 122, 0.14) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  box-shadow: 0 14px 30px rgba(11, 47, 89, 0.1);
+}
+
+.programmes-section .programme-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--programme-accent), #8dc0ff);
+}
+
+.programmes-section .programme-card::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -45px;
+  bottom: -90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--programme-tint), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.programmes-section .programme-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.programmes-section .programme-card--psle {
+  --programme-accent: #1556a4;
+  --programme-tint: rgba(21, 86, 164, 0.12);
+}
+
+.programmes-section .programme-card--secondary {
+  --programme-accent: #2a63a6;
+  --programme-tint: rgba(42, 99, 166, 0.12);
+}
+
+.programmes-section .programme-card--foundation {
+  --programme-accent: #3c77bc;
+  --programme-tint: rgba(60, 119, 188, 0.12);
+}
+
+.programme-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.programme-pill,
+.programme-time {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0.15rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.programme-pill {
+  color: #0b2f59;
+  background: #e9f1fb;
+  border: 1px solid rgba(16, 63, 122, 0.14);
+}
+
+.programme-time {
+  color: #4f6277;
+  background: #f5f8fc;
+  border: 1px solid rgba(16, 63, 122, 0.1);
+}
+
+.programmes-section .programme-card h3 {
+  color: #1f344c;
+}
+
+.programme-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.programme-list li {
+  position: relative;
+  color: #5a6b7e;
+  padding-left: 1.35rem;
+  font-size: 0.95rem;
+}
+
+.programme-list li::before {
+  content: "";
+  position: absolute;
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 50%;
+  left: 0.18rem;
+  top: 0.48rem;
+  background: var(--programme-accent);
+  box-shadow: 0 0 0 4px var(--programme-tint);
+}
+
+.programmes-section .programme-card.elevate-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(21, 86, 164, 0.28) !important;
+  box-shadow: 0 24px 40px rgba(11, 47, 89, 0.16) !important;
+}
+
+.programme-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  width: fit-content;
+  color: #0f4b95;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.programme-link i {
+  transition: transform 0.2s ease;
+}
+
+.programme-link:hover,
+.programme-link:focus {
+  color: #0b2f59;
+  transform: translateX(1px);
+}
+
+.programme-link:hover i,
+.programme-link:focus i {
+  transform: translateX(3px);
+}
+
 .reviews-kicker {
   color: #b3262d;
   font-size: 0.85rem;
@@ -831,7 +1007,6 @@ section {
   height: auto;
 }
 
-.programme-card,
 #teachers .card {
   border: 1px solid rgba(16, 63, 122, 0.06);
 }
@@ -1034,6 +1209,18 @@ section {
   .footer-map {
     height: auto;
     min-height: 260px;
+  }
+
+  .programmes-head {
+    margin-bottom: 2rem !important;
+  }
+
+  .programmes-subtitle {
+    font-size: 0.97rem;
+  }
+
+  .programmes-section .programme-card .card-body {
+    padding: 1.15rem !important;
   }
 
 }
