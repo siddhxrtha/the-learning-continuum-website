@@ -3,21 +3,17 @@ function initSiteNavbar(navRoot) {
     return;
   }
 
+  var isAboutPage = /about\.html$/i.test(window.location.pathname);
+  var isHomePage = !isAboutPage;
   var collapseElement = navRoot.querySelector(".tlc-nav-menu");
   var navLinks = Array.prototype.slice.call(navRoot.querySelectorAll(".js-nav-link"));
-  var sections = navLinks
-    .map(function (link) {
-      var hash = link.getAttribute("href");
-      if (!hash || hash.charAt(0) !== "#") {
-        return null;
-      }
-      return document.querySelector(hash);
-    })
-    .filter(Boolean);
 
-  function markActiveByHash(hash) {
+  function markActiveByPage() {
     navLinks.forEach(function (link) {
-      var isActive = link.getAttribute("href") === hash;
+      var href = link.getAttribute("href") || "";
+      var isHome = /index\.html$/i.test(href);
+      var isAbout = /about\.html$/i.test(href);
+      var isActive = (isHomePage && isHome) || (isAboutPage && isAbout);
       link.classList.toggle("is-active", isActive);
       if (isActive) {
         link.setAttribute("aria-current", "page");
@@ -25,21 +21,6 @@ function initSiteNavbar(navRoot) {
         link.removeAttribute("aria-current");
       }
     });
-  }
-
-  function updateActiveSection() {
-    var fromTop = window.scrollY + 130;
-    var current = sections[0];
-
-    sections.forEach(function (section) {
-      if (section.offsetTop <= fromTop) {
-        current = section;
-      }
-    });
-
-    if (current && current.id) {
-      markActiveByHash("#" + current.id);
-    }
   }
 
   function updateScrollState() {
@@ -56,12 +37,10 @@ function initSiteNavbar(navRoot) {
   }
 
   updateScrollState();
-  updateActiveSection();
+  markActiveByPage();
 
   window.addEventListener("scroll", updateScrollState, { passive: true });
-  window.addEventListener("scroll", updateActiveSection, { passive: true });
   window.addEventListener("resize", function () {
-    updateActiveSection();
     syncNavHeightVar();
   });
   window.addEventListener("load", syncNavHeightVar);
@@ -86,12 +65,16 @@ if (!customElements.get("site-navbar")) {
     class extends HTMLElement {
       connectedCallback() {
         var collapseId = "mainNav-" + Math.random().toString(36).slice(2, 9);
+        var brandHref = "index.html";
+        var homeHref = "index.html";
+        var aboutHref = "about.html";
+        var bookHref = "index.html#contact";
 
         this.innerHTML = `
         <nav class="navbar navbar-expand-lg sticky-top tlc-navbar" aria-label="Main navigation">
           <div class="container-fluid px-3 px-lg-4">
             <div class="tlc-nav-shell w-100">
-              <a class="navbar-brand tlc-brand" href="#home" aria-label="The Learning Continuum home">
+              <a class="navbar-brand tlc-brand" href="${brandHref}" aria-label="The Learning Continuum home">
                 <span class="tlc-brand-dot" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
                 <span class="tlc-brand-text">The Learning Continuum</span>
               </a>
@@ -100,13 +83,10 @@ if (!customElements.get("site-navbar")) {
               </button>
               <div class="collapse navbar-collapse tlc-nav-menu" id="${collapseId}">
                 <ul class="navbar-nav tlc-nav-links align-items-lg-center">
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="#home">Home</a></li>
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="#programmes">Programmes</a></li>
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="#results">Results</a></li>
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="#teachers">Teachers</a></li>
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="#reviews">Reviews</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" href="${homeHref}">Home</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" href="${aboutHref}">About Us</a></li>
                   <li class="nav-item ms-lg-auto mt-3 mt-lg-0 d-grid d-lg-block">
-                    <a class="tlc-nav-cta" href="#contact">Book Consultation</a>
+                    <a class="tlc-nav-cta" href="${bookHref}">Book Consultation</a>
                   </li>
                 </ul>
               </div>

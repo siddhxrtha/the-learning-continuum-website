@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="About The Learning Continuum - A trusted Singapore tuition centre guiding students towards academic excellence since 2006."
+    />
+    <title>About Us | The Learning Continuum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .about-hero {
+        position: relative;
+        padding-top: 10rem;
+        padding-bottom: 5.5rem;
+        overflow: hidden;
+      }
+
+      .about-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(115deg, rgba(9, 27, 54, 0.9), rgba(9, 27, 54, 0.62)),
+          url("https://cashmoneysid.sirv.com/Images/the-learning-continuum/img01.jpg")
+            center/cover no-repeat;
+        z-index: 0;
+      }
+
+      .about-hero .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .about-hero-image {
+        width: 100%;
+        min-height: 360px;
+        border-radius: 1.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        box-shadow: 0 22px 46px rgba(7, 17, 38, 0.38);
+        object-fit: cover;
+      }
+
+      .hero-tagline {
+        max-width: 55ch;
+      }
+
+      .hero-fun-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .hero-fun-pill {
+        padding: 0.38rem 0.82rem;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #e9f2ff;
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+
+      .about-section-card,
+      .pillar-card,
+      .team-card,
+      .stat-card,
+      .student-journey-card {
+        border-radius: 1.25rem;
+        border: 1px solid rgba(20, 53, 95, 0.12);
+        box-shadow: 0 12px 30px rgba(15, 33, 61, 0.08);
+        background: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          border-color 0.3s ease;
+        will-change: transform;
+      }
+
+      .pillar-card:hover,
+      .pillar-card:focus-within,
+      .pillar-card:focus-visible {
+        transform: translateY(-8px) scale(1.012);
+        border-color: rgba(21, 86, 164, 0.24);
+        box-shadow:
+          inset 0 4px 0 rgba(32, 94, 177, 0.92),
+          0 24px 42px rgba(11, 47, 89, 0.16);
+      }
+
+      .founder-portrait {
+        width: 100%;
+        min-height: 440px;
+        border-radius: 1.25rem;
+        object-fit: cover;
+        box-shadow: 0 18px 35px rgba(15, 33, 61, 0.14);
+      }
+
+      .pillar-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        background: rgba(21, 83, 158, 0.1);
+        color: #154d92;
+      }
+
+      .stat-value {
+        font-size: clamp(1.65rem, 2.6vw, 2.3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        color: #14365f;
+      }
+
+      .teacher-photo {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(21, 83, 158, 0.14);
+      }
+
+      .team-highlight {
+        border-left: 4px solid #2f74c7;
+        background: #f5f9ff;
+        color: #314862;
+      }
+
+      .about-cta {
+        border-radius: 1.25rem;
+        background: linear-gradient(120deg, #15355d 0%, #1f4e87 100%);
+        color: #fff;
+        box-shadow: 0 20px 40px rgba(12, 34, 66, 0.24);
+      }
+
+      .nurture-section-label {
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #1f5aa6;
+      }
+
+      .nurture-intro {
+        max-width: 860px;
+      }
+
+      .nurture-card {
+        border-radius: 1.25rem;
+        padding: 2rem;
+        min-height: 100%;
+        box-shadow: 0 16px 34px rgba(15, 33, 61, 0.12);
+        transition: transform 0.32s ease, box-shadow 0.32s ease,
+          opacity 0.55s ease;
+      }
+
+      .nurture-card--blue {
+        background: linear-gradient(160deg, #d7e9ff 0%, #c7defb 100%);
+        color: #14355d;
+      }
+
+      .nurture-card--orange {
+        background: linear-gradient(160deg, #ffe2c5 0%, #ffd1a7 100%);
+        color: #17365d;
+      }
+
+      .reveal-panel {
+        opacity: 0;
+      }
+
+      .reveal-panel.from-left {
+        transform: translateX(-42px);
+      }
+
+      .reveal-panel.from-right {
+        transform: translateX(42px);
+      }
+
+      .reveal-panel.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal-panel,
+        .reveal-panel.from-left,
+        .reveal-panel.from-right {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+        .nurture-card {
+          transition: none;
+        }
+
+        .pillar-card:hover,
+        .pillar-card:focus-visible,
+        .pillar-card:focus-within {
+          transform: none;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .about-hero {
+          padding-top: 8.8rem;
+          padding-bottom: 4.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <site-navbar></site-navbar>
+
+    <!-- HERO -->
+    <header class="about-hero nav-overlap-section">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-6 text-white">
+            <span class="badge hero-badge rounded-pill mb-3"
+              >Established Since 2006</span
+            >
+            <h1 class="display-5 fw-bold mb-3 text-white">
+              About The Learning Continuum
+            </h1>
+            <p class="lead mb-3">
+              Guiding Students Towards Academic Excellence Since 2006
+            </p>
+            <p class="mb-4 hero-tagline">
+              The Learning Continuum is a Singapore tuition centre specialising
+              in PSLE, N-Level and O-Level preparation. We focus on building
+              strong academic foundations through structured teaching, small
+              class sizes, and proven exam strategies that help students become
+              confident, independent learners.
+            </p>
+            <div class="hero-fun-points mb-4">
+              <span class="hero-fun-pill"
+                ><i class="bi bi-stars me-1"></i>Engaging Lessons</span
+              >
+              <span class="hero-fun-pill"
+                ><i class="bi bi-people-fill me-1"></i>Small Class Attention</span
+              >
+              <span class="hero-fun-pill"
+                ><i class="bi bi-trophy-fill me-1"></i>Exam Readiness</span
+              >
+            </div>
+            <div>
+              <a class="btn btn-light px-3 py-2" href="#founders-message"
+                >Learn More</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img
+              src="assets/images/students-class.jpeg"
+              alt="Students at The Learning Continuum"
+              class="img-fluid rounded-4 shadow-lg about-hero-image"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FOUNDER MESSAGE -->
+    <section id="founders-message" class="section-space">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-7">
+            <article class="about-section-card p-4 p-lg-5 h-100">
+              <p class="programmes-kicker mb-2">Our Story</p>
+              <h2 class="fw-bold mb-3">Founder’s Message</h2>
+              <p class="mb-3">
+                “When I founded The Learning Continuum in 2006, the goal was
+                simple - to create a place where students could truly understand
+                their subjects, not just memorise answers.
+              </p>
+              <p class="mb-3">
+                Over the years, we have guided thousands of students through
+                PSLE, N Levels, and O Levels by focusing on clear explanations,
+                strong fundamentals, and disciplined practice. We believe that
+                the best learning happens when students feel safe to ask
+                questions, challenged to think deeply, and supported to keep
+                improving.
+              </p>
+              <p class="mb-3">
+                Our classrooms are designed to combine structure with
+                encouragement. Students work through carefully planned lessons,
+                exam-style questions, and targeted feedback that helps them turn
+                weak topics into strengths over time.
+              </p>
+              <p class="mb-0">
+                Our philosophy is that every student can succeed with the right
+                guidance, structure, and encouragement. We are proud to partner
+                with parents in this journey and to celebrate every milestone,
+                from improved confidence to excellent examination outcomes.”
+              </p>
+            </article>
+          </div>
+          <div class="col-lg-5">
+            <img
+              src="assets/images/founder.jpeg"
+              alt="Founder of The Learning Continuum"
+              class="founder-portrait"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NURTURING LEARNERS -->
+    <section class="section-space pt-0">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="nurture-section-label mb-2">NUURTURING EXAM CONFIDENT LEARNERS</p>
+          <h2 class="fw-bold mb-3">
+            We’re committed to helping every student reach their potential.
+          </h2>
+          <p class="programmes-subtitle nurture-intro mx-auto mb-0">
+            We believe that with the right structure and support, every student can improve. At The Learning Continuum, we combine clear teaching, small classes, and consistent practice so students build confidence and perform their best.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="nurture-card nurture-card--blue reveal-panel from-left">
+              <h3 class="h4 fw-bold mb-3">Structured Learning Materials</h3>
+              <p class="mb-3">
+                Students receive carefully curated notes, worksheets, and practice sets designed to build mastery step-by-step.
+              </p>
+              <p class="mb-0">
+                Our materials are aligned with the Singapore syllabus and focus on the core skills needed for PSLE, N-Level, and O-Level success - so students practise with purpose, not guesswork.
+              </p>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="nurture-card nurture-card--orange reveal-panel from-right">
+              <h3 class="h4 fw-bold mb-3">Student-Focused Support</h3>
+              <p class="mb-3">
+                We go beyond lesson time by answering questions, tracking progress, and guiding students on how to improve week by week.
+              </p>
+              <p class="mb-0">
+                Parents also receive clear updates and can speak with our tutors on how to support learning at home, ensuring students stay confident, motivated, and consistent.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING PILLARS -->
+    <section class="section-space bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="programmes-kicker mb-2">How We Guide Students</p>
+          <h2 class="fw-bold mb-2">Our Teaching Philosophy</h2>
+          <p class="programmes-subtitle mb-0 mx-auto" style="max-width: 720px">
+            We combine academic rigor with student motivation so learners stay
+            curious, confident, and consistently improving throughout the year.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="pillar-card h-100 p-4">
+              <div class="pillar-icon mb-3">
+                <i class="bi bi-lightbulb-fill"></i>
+              </div>
+              <h3 class="h5 fw-semibold mb-3">Strong Academic Foundations</h3>
+              <p class="mb-2 text-secondary">
+                We help students build solid understanding in core subjects through clear explanations and structured lessons.
+              </p>
+              <p class="mb-0 text-secondary">
+                By focusing on fundamentals first, students develop confidence in tackling more advanced concepts and challenging exam questions.
+              </p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="pillar-card h-100 p-4">
+              <div class="pillar-icon mb-3">
+                <i class="bi bi-book-half"></i>
+              </div>
+              <h3 class="h5 fw-semibold mb-3">Small Class Attention</h3>
+              <p class="mb-2 text-secondary">
+                Our small class sizes allow teachers to closely monitor each student’s progress and learning needs.
+              </p>
+              <p class="mb-0 text-secondary">
+                With more personalised guidance, students can ask questions freely and receive targeted feedback to improve faster.
+              </p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="pillar-card h-100 p-4">
+              <div class="pillar-icon mb-3">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h3 class="h5 fw-semibold mb-3">Exam Confidence</h3>
+              <p class="mb-2 text-secondary">
+                We prepare students for major examinations with proven strategies, practice papers, and step-by-step guidance.
+              </p>
+              <p class="mb-0 text-secondary">
+                Through consistent practice and review, students become familiar with exam formats and perform with greater confidence.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="section-space">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold mb-2">Results That Build Confidence</h2>
+        </div>
+        <div class="row g-3 g-lg-4">
+          <div class="col-6 col-lg-3">
+            <article class="stat-card h-100 text-center p-4">
+              <p class="stat-value mb-2">
+                <span class="js-stat-counter" data-target="18" data-suffix="+">0</span>
+              </p>
+              <p class="mb-0 fw-semibold">Years Experience</p>
+            </article>
+          </div>
+          <div class="col-6 col-lg-3">
+            <article class="stat-card h-100 text-center p-4">
+              <p class="stat-value mb-2">
+                <span class="js-stat-counter" data-target="5000" data-suffix="+">0</span>
+              </p>
+              <p class="mb-0 fw-semibold">Students Guided</p>
+            </article>
+          </div>
+          <div class="col-6 col-lg-3">
+            <article class="stat-card h-100 text-center p-4">
+              <p class="stat-value mb-2">
+                <span class="js-stat-counter" data-target="49" data-scale="10" data-decimals="1">0</span>/5
+              </p>
+              <p class="mb-0 fw-semibold">Parent Rating</p>
+            </article>
+          </div>
+          <div class="col-6 col-lg-3">
+            <article class="stat-card h-100 text-center p-4">
+              <p class="stat-value mb-2">Small</p>
+              <p class="mb-0 fw-semibold">Group Classes</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="student-journey-card p-4 p-lg-5 mt-4">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h3 class="h4 fw-bold mb-2">What Parents and Students Value Most</h3>
+              <p class="mb-0 text-secondary">
+                Families consistently tell us they appreciate our clear lesson
+                structure, regular progress updates, and patient teaching style.
+                Students enjoy lessons that are engaging and focused, while
+                parents gain confidence from seeing steady academic improvement.
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                <span class="badge rounded-pill text-bg-light border px-3 py-2">Clear Explanations</span>
+                <span class="badge rounded-pill text-bg-light border px-3 py-2">Weekly Practice</span>
+                <span class="badge rounded-pill text-bg-light border px-3 py-2">Exam Focus</span>
+                <span class="badge rounded-pill text-bg-light border px-3 py-2">Progress Tracking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEET THE TEAM -->
+    <section class="section-space bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-2">Meet Our Educators</h2>
+          <p class="programmes-subtitle mb-0 mx-auto" style="max-width: 760px">
+            Our tutors are experienced educators who are passionate about
+            helping students achieve their academic goals. Each teacher combines
+            strong subject knowledge with practical exam coaching and genuine
+            care for student growth.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="team-card h-100 p-4 text-center">
+              <img
+                class="teacher-photo mb-3"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=320&q=80"
+                alt="Mr Lai"
+              />
+              <h3 class="h5 fw-semibold mb-1">Mr Lai</h3>
+              <p class="small text-primary fw-semibold mb-2">
+                Chemistry Specialist
+              </p>
+              <p class="small text-secondary mb-0">
+                10+ years preparing students for O-Level Chemistry. Known for
+                step-by-step explanations and powerful exam answering methods.
+              </p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="team-card h-100 p-4 text-center">
+              <img
+                class="teacher-photo mb-3"
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=320&q=80"
+                alt="Ms Tan"
+              />
+              <h3 class="h5 fw-semibold mb-1">Ms Tan</h3>
+              <p class="small text-primary fw-semibold mb-2">
+                Mathematics Tutor
+              </p>
+              <p class="small text-secondary mb-0">
+                Expert in PSLE and Secondary Mathematics, with a strong focus on
+                conceptual clarity, confidence, and consistent score growth.
+              </p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="team-card h-100 p-4 text-center">
+              <img
+                class="teacher-photo mb-3"
+                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=320&q=80"
+                alt="Mr Lim"
+              />
+              <h3 class="h5 fw-semibold mb-1">Mr Lim</h3>
+              <p class="small text-primary fw-semibold mb-2">Science Tutor</p>
+              <p class="small text-secondary mb-0">
+                Focused on helping students master core science concepts through
+                practical examples, frequent revision, and targeted feedback.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-highlight rounded-4 p-4 p-lg-5 mt-4">
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-8">
+              <h3 class="h5 fw-bold mb-2">A Team That Teaches With Heart</h3>
+              <p class="mb-0">
+                Beyond results, our educators are committed to mentoring
+                students through challenges, motivating them to stay consistent,
+                and helping them discover confidence in their own abilities.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn btn-primary btn-micro px-4" href="index.html#teachers"
+                >See More Teachers</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-space">
+      <div class="container">
+        <div class="about-cta p-4 p-lg-5 text-center">
+          <h2 class="fw-bold text-white mb-3">
+            Give Your Child the Academic Advantage
+          </h2>
+          <p class="lead mb-4">
+            Start with a consultation and let us recommend the most suitable
+            learning path for your child.
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a class="btn btn-light btn-lg px-4 btn-micro" href="index.html#contact"
+              >Book Consultation</a
+            >
+            <a
+              class="btn btn-outline-light btn-lg px-4 btn-micro"
+              href="index.html#programmes"
+              >View Programmes</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer-section pt-5 pb-4">
+      <div class="container">
+        <div class="footer-contact-shell rounded-4 p-3 p-md-4 p-xl-5">
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-6">
+              <p class="footer-kicker mb-2">The Learning Continuum Pte Ltd</p>
+              <h2 class="h4 fw-bold mb-3">Learn Better, Step by Step</h2>
+              <p class="footer-lead mb-4">
+                PSLE, N and O Level tuition with clear teaching, small classes,
+                and steady progress.
+              </p>
+              <div class="footer-quote rounded-4 p-3 p-lg-4 mb-4">
+                <p class="mb-0">
+                  Since 2006, we have helped students build confidence and
+                  improve results in a supportive learning environment.
+                </p>
+              </div>
+              <div class="footer-contact-stack">
+                <a
+                  class="footer-contact-chip"
+                  href="https://maps.google.com/?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                  <span
+                    >Address: 632 Ang Mo Kio Ave 4, #01-964 (2nd level),
+                    Singapore 560632</span
+                  >
+                </a>
+                <a class="footer-contact-chip" href="tel:+6597533888">
+                  <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                  <span>Phone: 9753 3888</span>
+                </a>
+                <a
+                  class="footer-contact-chip"
+                  href="https://wa.me/6597533888"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                  <span>WhatsApp Us Now</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6 footer-map-col">
+              <div class="footer-map-shell h-100">
+                <div class="footer-map-label">
+                  <i class="bi bi-map-fill" aria-hidden="true"></i>
+                  <span>Our Location</span>
+                </div>
+                <iframe
+                  class="footer-map rounded-4"
+                  title="The Learning Continuum location map"
+                  src="https://www.google.com/maps?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632&z=17&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                >
+                </iframe>
+                <a
+                  class="footer-map-link"
+                  href="https://maps.google.com/?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open in Google Maps</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2 small text-secondary mt-4"
+        >
+          <p class="mb-0">
+            &copy; 2026 The Learning Continuum. All rights reserved.
+          </p>
+          <p class="mb-0">Privacy Policy | Terms of Use</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script>
+      (function () {
+        const panels = document.querySelectorAll(".reveal-panel");
+        if (!panels.length) return;
+
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          panels.forEach((panel) => panel.classList.add("show"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.2,
+            rootMargin: "0px 0px -10% 0px",
+          }
+        );
+
+        panels.forEach((panel) => observer.observe(panel));
+      })();
+    </script>
+  </body>
+</html>
