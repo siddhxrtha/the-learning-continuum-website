@@ -4,7 +4,8 @@ function initSiteNavbar(navRoot) {
   }
 
   var isAboutPage = /about\.html$/i.test(window.location.pathname);
-  var isHomePage = !isAboutPage;
+  var isSchedulePage = /schedule\.html$/i.test(window.location.pathname);
+  var isHomePage = !isAboutPage && !isSchedulePage;
   var collapseElement = navRoot.querySelector(".tlc-nav-menu");
   var navLinks = Array.prototype.slice.call(navRoot.querySelectorAll(".js-nav-link"));
 
@@ -13,7 +14,11 @@ function initSiteNavbar(navRoot) {
       var href = link.getAttribute("href") || "";
       var isHome = /index\.html$/i.test(href);
       var isAbout = /about\.html$/i.test(href);
-      var isActive = (isHomePage && isHome) || (isAboutPage && isAbout);
+      var isSchedule = /schedule\.html$/i.test(href);
+      var isActive =
+        (isHomePage && isHome) ||
+        (isAboutPage && isAbout) ||
+        (isSchedulePage && isSchedule);
       link.classList.toggle("is-active", isActive);
       if (isActive) {
         link.setAttribute("aria-current", "page");
@@ -68,6 +73,7 @@ if (!customElements.get("site-navbar")) {
         var brandHref = "index.html";
         var homeHref = "index.html";
         var aboutHref = "about.html";
+        var scheduleHref = "schedule.html";
         var bookHref = "index.html#contact";
 
         this.innerHTML = `
@@ -85,6 +91,7 @@ if (!customElements.get("site-navbar")) {
                 <ul class="navbar-nav tlc-nav-links align-items-lg-center">
                   <li class="nav-item"><a class="nav-link js-nav-link" href="${homeHref}">Home</a></li>
                   <li class="nav-item"><a class="nav-link js-nav-link" href="${aboutHref}">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" href="${scheduleHref}">Schedules</a></li>
                   <li class="nav-item ms-lg-auto mt-3 mt-lg-0 d-grid d-lg-block">
                     <a class="tlc-nav-cta" href="${bookHref}">Book Consultation</a>
                   </li>
