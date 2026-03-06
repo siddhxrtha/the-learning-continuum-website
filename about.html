@@ -86,6 +86,7 @@
       }
 
       .about-section-card,
+      .about-story-card,
       .pillar-card,
       .team-card,
       .stat-card,
@@ -99,6 +100,14 @@
         will-change: transform;
       }
 
+      .about-story-image {
+        width: 100%;
+        min-height: 420px;
+        border-radius: 1.25rem;
+        object-fit: cover;
+        box-shadow: 0 18px 35px rgba(15, 33, 61, 0.14);
+      }
+
       .pillar-card:hover,
       .pillar-card:focus-within,
       .pillar-card:focus-visible {
@@ -107,6 +116,16 @@
         box-shadow:
           inset 0 4px 0 rgba(32, 94, 177, 0.92),
           0 24px 42px rgba(11, 47, 89, 0.16);
+      }
+
+      .mv-card:hover,
+      .mv-card:focus-within,
+      .mv-card:focus-visible {
+        transform: translateY(-6px);
+        border-color: rgba(21, 86, 164, 0.24);
+        box-shadow:
+          inset 0 4px 0 rgba(32, 94, 177, 0.85),
+          0 22px 38px rgba(11, 47, 89, 0.15);
       }
 
       .founder-portrait {
@@ -150,11 +169,45 @@
         color: #314862;
       }
 
-      .about-cta {
+      .milestones-card {
         border-radius: 1.25rem;
-        background: linear-gradient(120deg, #15355d 0%, #1f4e87 100%);
+        border: 1px solid rgba(20, 53, 95, 0.12);
+        box-shadow: 0 12px 30px rgba(15, 33, 61, 0.08);
+        background: #fff;
+        padding: 2rem;
+      }
+
+      .milestone-list {
+        border-left: 4px solid #e2c49f;
+        padding-left: 1.25rem;
+        display: grid;
+        gap: 1.3rem;
+      }
+
+      .milestone-list h3 {
+        margin-bottom: 0.3rem;
+      }
+
+      .milestone-list p {
+        margin-bottom: 0;
+        color: #4f647b;
+      }
+
+      .community-card {
+        border-radius: 1.25rem;
+        background: linear-gradient(120deg, #08254a 0%, #10396e 100%);
         color: #fff;
         box-shadow: 0 20px 40px rgba(12, 34, 66, 0.24);
+        padding: 2.2rem;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .community-card h2,
+      .community-card p {
+        color: #fff;
       }
 
       .nurture-section-label {
@@ -270,7 +323,7 @@
               >
             </div>
             <div>
-              <a class="btn btn-light px-3 py-2" href="#founders-message"
+              <a class="btn btn-light px-3 py-2" href="#our-story"
                 >Learn More</a
               >
             </div>
@@ -286,8 +339,68 @@
       </div>
     </header>
 
+    <!-- OUR STORY -->
+    <section id="our-story" class="section-space">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80"
+              alt="Students studying together in a learning space"
+              class="about-story-image"
+            />
+          </div>
+          <div class="col-lg-6">
+            <article class="about-story-card p-4 p-lg-5 h-100">
+              <h2 class="fw-bold mb-3">Our Story</h2>
+              <p class="mb-3">
+                The Learning Continuum began with a simple goal: to give students
+                clear learning pathways and steady academic support beyond school
+                hours.
+              </p>
+              <p class="mb-3">
+                Since 2006, we have helped students strengthen foundations and
+                perform with confidence in examinations through focused teaching
+                and consistent progress tracking.
+              </p>
+              <p class="mb-0">
+                Our centre is built around consistency, teacher quality, and
+                parent communication so each learner can grow step by step.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="section-space pt-0">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="about-story-card mv-card p-4 p-lg-5 h-100">
+              <h2 class="fw-bold mb-3">Mission</h2>
+              <p class="mb-0">
+                To nurture every student's academic growth through structured
+                teaching, personalised feedback, and meaningful mentorship.
+              </p>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="about-story-card mv-card p-4 p-lg-5 h-100">
+              <h2 class="fw-bold mb-3">Vision</h2>
+              <p class="mb-0">
+                To be Singapore's most trusted tuition centre for holistic,
+                student-centred academic excellence.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOUNDER MESSAGE -->
-    <section id="founders-message" class="section-space">
+    <section id="founders-message" class="section-space pt-0">
       <div class="container">
         <div class="row g-4 g-lg-5 align-items-center">
           <div class="col-lg-7">
@@ -336,7 +449,7 @@
     <section class="section-space pt-0">
       <div class="container">
         <div class="text-center mb-5">
-          <p class="nurture-section-label mb-2">NUURTURING EXAM CONFIDENT LEARNERS</p>
+          <p class="nurture-section-label mb-2">NURTURING EXAM-CONFIDENT LEARNERS</p>
           <h2 class="fw-bold mb-3">
             We’re committed to helping every student reach their potential.
           </h2>
@@ -493,164 +606,111 @@
       </div>
     </section>
 
-    <!-- MEET THE TEAM -->
+    <!-- MILESTONES + COMMUNITY CTA -->
     <section class="section-space bg-light">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold mb-2">Meet Our Educators</h2>
-          <p class="programmes-subtitle mb-0 mx-auto" style="max-width: 760px">
-            Our tutors are experienced educators who are passionate about
-            helping students achieve their academic goals. Each teacher combines
-            strong subject knowledge with practical exam coaching and genuine
-            care for student growth.
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <article class="team-card h-100 p-4 text-center">
-              <img
-                class="teacher-photo mb-3"
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=320&q=80"
-                alt="Mr Lai"
-              />
-              <h3 class="h5 fw-semibold mb-1">Mr Lai</h3>
-              <p class="small text-primary fw-semibold mb-2">
-                Chemistry Specialist
-              </p>
-              <p class="small text-secondary mb-0">
-                10+ years preparing students for O-Level Chemistry. Known for
-                step-by-step explanations and powerful exam answering methods.
-              </p>
+        <div class="row g-4 g-lg-5 align-items-stretch">
+          <div class="col-lg-6">
+            <article class="milestones-card h-100">
+              <h2 class="fw-bold mb-4">Milestones</h2>
+              <div class="milestone-list">
+                <div>
+                  <h3 class="h4 fw-semibold">2006 - Centre Founded</h3>
+                  <p>Started with two classes in Thomson with 18 pioneer students.</p>
+                </div>
+                <div>
+                  <h3 class="h4 fw-semibold">2020 - Expanded Programmes</h3>
+                  <p>Introduced full G2 and G3 pathways in Mathematics and Science.</p>
+                </div>
+                <div>
+                  <h3 class="h4 fw-semibold">2023 - Parent Partnership Model</h3>
+                  <p>Launched structured monthly progress consultations.</p>
+                </div>
+                <div>
+                  <h3 class="h4 fw-semibold">2026 - 1,500+ Families Supported</h3>
+                  <p>Continued growth driven by referrals and results.</p>
+                </div>
+              </div>
             </article>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <article class="team-card h-100 p-4 text-center">
-              <img
-                class="teacher-photo mb-3"
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=320&q=80"
-                alt="Ms Tan"
-              />
-              <h3 class="h5 fw-semibold mb-1">Ms Tan</h3>
-              <p class="small text-primary fw-semibold mb-2">
-                Mathematics Tutor
+          <div class="col-lg-6">
+            <article class="community-card h-100">
+              <h2 class="fw-bold mb-3">Join Our Learning Community</h2>
+              <p class="lead mb-4">
+                Speak with our academic team and discover the best class fit for
+                your child.
               </p>
-              <p class="small text-secondary mb-0">
-                Expert in PSLE and Secondary Mathematics, with a strong focus on
-                conceptual clarity, confidence, and consistent score growth.
-              </p>
+              <div class="d-flex flex-column flex-sm-row gap-3">
+                <a class="btn btn-light btn-lg px-4 btn-micro" href="contact.html"
+                  >Contact Us</a
+                >
+                <a
+                  class="btn btn-outline-light btn-lg px-4 btn-micro"
+                  href="contact.html#enquiry-form"
+                  >Book Trial</a
+                >
+              </div>
             </article>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <article class="team-card h-100 p-4 text-center">
-              <img
-                class="teacher-photo mb-3"
-                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=320&q=80"
-                alt="Mr Lim"
-              />
-              <h3 class="h5 fw-semibold mb-1">Mr Lim</h3>
-              <p class="small text-primary fw-semibold mb-2">Science Tutor</p>
-              <p class="small text-secondary mb-0">
-                Focused on helping students master core science concepts through
-                practical examples, frequent revision, and targeted feedback.
-              </p>
-            </article>
-          </div>
-        </div>
-
-        <div class="team-highlight rounded-4 p-4 p-lg-5 mt-4">
-          <div class="row g-3 align-items-center">
-            <div class="col-lg-8">
-              <h3 class="h5 fw-bold mb-2">A Team That Teaches With Heart</h3>
-              <p class="mb-0">
-                Beyond results, our educators are committed to mentoring
-                students through challenges, motivating them to stay consistent,
-                and helping them discover confidence in their own abilities.
-              </p>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-              <a class="btn btn-primary btn-micro px-4" href="index.html#teachers"
-                >See More Teachers</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section-space">
-      <div class="container">
-        <div class="about-cta p-4 p-lg-5 text-center">
-          <h2 class="fw-bold text-white mb-3">
-            Give Your Child the Academic Advantage
-          </h2>
-          <p class="lead mb-4">
-            Start with a consultation and let us recommend the most suitable
-            learning path for your child.
-          </p>
-          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-            <a class="btn btn-light btn-lg px-4 btn-micro" href="index.html#contact"
-              >Book Consultation</a
-            >
-            <a
-              class="btn btn-outline-light btn-lg px-4 btn-micro"
-              href="index.html#programmes"
-              >View Programmes</a
-            >
           </div>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact" class="footer-section pt-5 pb-4">
+    <footer id="contact" class="footer-section pt-5 pb-4 site-footer-extended">
       <div class="container">
-        <div class="footer-contact-shell rounded-4 p-3 p-md-4 p-xl-5">
-          <div class="row g-4 align-items-stretch">
-            <div class="col-lg-6">
+        <div class="footer-contact-shell rounded-4 p-4 p-lg-5">
+          <div class="row g-4">
+            <div class="col-lg-4">
               <p class="footer-kicker mb-2">The Learning Continuum Pte Ltd</p>
-              <h2 class="h4 fw-bold mb-3">Learn Better, Step by Step</h2>
-              <p class="footer-lead mb-4">
-                PSLE, N and O Level tuition with clear teaching, small classes,
-                and steady progress.
+              <h2 class="h4 fw-bold mb-3">Premium Singapore Tuition Support</h2>
+              <p class="footer-lead mb-3">
+                Trusted since 2006 for PSLE, N Level and O Level preparation with
+                structured teaching and small classes.
               </p>
-              <div class="footer-quote rounded-4 p-3 p-lg-4 mb-4">
-                <p class="mb-0">
-                  Since 2006, we have helped students build confidence and
-                  improve results in a supportive learning environment.
-                </p>
-              </div>
-              <div class="footer-contact-stack">
-                <a
-                  class="footer-contact-chip"
-                  href="https://maps.google.com/?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                  <span
-                    >Address: 632 Ang Mo Kio Ave 4, #01-964 (2nd level),
-                    Singapore 560632</span
-                  >
-                </a>
-                <a class="footer-contact-chip" href="tel:+6597533888">
-                  <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-                  <span>Phone: 9753 3888</span>
-                </a>
-                <a
-                  class="footer-contact-chip"
-                  href="https://wa.me/6597533888"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                  <span>WhatsApp Us Now</span>
-                </a>
+              <div class="footer-socials">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
               </div>
             </div>
-            <div class="col-lg-6 footer-map-col">
-              <div class="footer-map-shell h-100">
+            <div class="col-6 col-lg-2">
+              <h3 class="footer-grid-title">Quick Links</h3>
+              <ul class="footer-link-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="schedule.html">Schedules</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-3">
+              <h3 class="footer-grid-title">Programmes</h3>
+              <ul class="footer-link-list">
+                <li><a href="programmes.html">Primary School Tuition</a></li>
+                <li><a href="programmes.html">Secondary School Tuition</a></li>
+                <li><a href="programmes.html">Creative Writing</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3">
+              <h3 class="footer-grid-title">Contact</h3>
+              <ul class="footer-link-list mb-3">
+                <li><a href="tel:+6597533888">+65 9753 3888</a></li>
+                <li><a href="mailto:hello@thelearningcontinuum.sg">hello@thelearningcontinuum.sg</a></li>
+                <li><a href="https://maps.google.com/?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632" target="_blank" rel="noopener noreferrer">632 Ang Mo Kio Ave 4, #01-964, Singapore 560632</a></li>
+              </ul>
+              <form class="js-newsletter-form" novalidate>
+                <label class="small fw-semibold mb-2" for="newsletter-about">Newsletter Updates</label>
+                <div class="input-group newsletter-input-group">
+                  <input id="newsletter-about" type="email" class="form-control" placeholder="Email address" required />
+                  <button class="btn btn-primary" type="submit">Join</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <div class="footer-map-shell">
                 <div class="footer-map-label">
                   <i class="bi bi-map-fill" aria-hidden="true"></i>
                   <span>Our Location</span>
@@ -679,7 +739,7 @@
           class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2 small text-secondary mt-4"
         >
           <p class="mb-0">
-            &copy; 2026 The Learning Continuum. All rights reserved.
+            &copy; <span class="js-current-year">2026</span> The Learning Continuum. All rights reserved.
           </p>
           <p class="mb-0">Privacy Policy | Terms of Use</p>
         </div>
@@ -694,6 +754,7 @@
     <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/home.js"></script>
+    <script src="assets/js/site.js"></script>
     <script>
       (function () {
         const panels = document.querySelectorAll(".reveal-panel");
