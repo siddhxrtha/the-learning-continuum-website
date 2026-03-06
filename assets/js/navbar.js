@@ -3,22 +3,32 @@ function initSiteNavbar(navRoot) {
     return;
   }
 
-  var isAboutPage = /about\.html$/i.test(window.location.pathname);
-  var isSchedulePage = /schedule\.html$/i.test(window.location.pathname);
-  var isHomePage = !isAboutPage && !isSchedulePage;
+  var path = (window.location.pathname || "").toLowerCase();
+  var currentPage = "home";
+  var pageMatchers = [
+    { key: "about", test: /about\.html$/i },
+    { key: "programmes", test: /programmes\.html$/i },
+    { key: "schedule", test: /schedule\.html$/i },
+    { key: "teachers", test: /teachers\.html$/i },
+    { key: "testimonials", test: /testimonials\.html$/i },
+    { key: "faq", test: /faq\.html$/i },
+    { key: "contact", test: /contact\.html$/i },
+    { key: "results", test: /results\.html$/i }
+  ];
+
+  pageMatchers.forEach(function (matcher) {
+    if (matcher.test.test(path)) {
+      currentPage = matcher.key;
+    }
+  });
+
   var collapseElement = navRoot.querySelector(".tlc-nav-menu");
   var navLinks = Array.prototype.slice.call(navRoot.querySelectorAll(".js-nav-link"));
 
   function markActiveByPage() {
     navLinks.forEach(function (link) {
-      var href = link.getAttribute("href") || "";
-      var isHome = /index\.html$/i.test(href);
-      var isAbout = /about\.html$/i.test(href);
-      var isSchedule = /schedule\.html$/i.test(href);
-      var isActive =
-        (isHomePage && isHome) ||
-        (isAboutPage && isAbout) ||
-        (isSchedulePage && isSchedule);
+      var pageKey = link.dataset.page || "";
+      var isActive = pageKey === currentPage;
       link.classList.toggle("is-active", isActive);
       if (isActive) {
         link.setAttribute("aria-current", "page");
@@ -56,7 +66,7 @@ function initSiteNavbar(navRoot) {
         return;
       }
 
-      if (window.matchMedia("(max-width: 991.98px)").matches) {
+      if (window.matchMedia("(max-width: 1199.98px)").matches) {
         var instance = bootstrap.Collapse.getOrCreateInstance(collapseElement, { toggle: false });
         instance.hide();
       }
@@ -71,13 +81,10 @@ if (!customElements.get("site-navbar")) {
       connectedCallback() {
         var collapseId = "mainNav-" + Math.random().toString(36).slice(2, 9);
         var brandHref = "index.html";
-        var homeHref = "index.html";
-        var aboutHref = "about.html";
-        var scheduleHref = "schedule.html";
-        var bookHref = "index.html#contact";
+        var bookHref = "contact.html#enquiry-form";
 
         this.innerHTML = `
-        <nav class="navbar navbar-expand-lg sticky-top tlc-navbar" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-xl sticky-top tlc-navbar" aria-label="Main navigation">
           <div class="container-fluid px-3 px-lg-4">
             <div class="tlc-nav-shell w-100">
               <a class="navbar-brand tlc-brand" href="${brandHref}" aria-label="The Learning Continuum home">
@@ -89,11 +96,16 @@ if (!customElements.get("site-navbar")) {
               </button>
               <div class="collapse navbar-collapse tlc-nav-menu" id="${collapseId}">
                 <ul class="navbar-nav tlc-nav-links align-items-lg-center">
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="${homeHref}">Home</a></li>
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="${aboutHref}">About Us</a></li>
-                  <li class="nav-item"><a class="nav-link js-nav-link" href="${scheduleHref}">Schedules</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="home" href="index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="about" href="about.html">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="programmes" href="programmes.html">Programmes</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="schedule" href="schedule.html">Schedules</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="teachers" href="teachers.html">Teachers</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="testimonials" href="testimonials.html">Testimonials</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="faq" href="faq.html">FAQ</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="contact" href="contact.html">Contact</a></li>
                   <li class="nav-item ms-lg-auto mt-3 mt-lg-0 d-grid d-lg-block">
-                    <a class="tlc-nav-cta" href="${bookHref}">Book Consultation</a>
+                    <a class="tlc-nav-cta" href="${bookHref}">Book Free Trial</a>
                   </li>
                 </ul>
               </div>
