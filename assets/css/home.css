@@ -128,8 +128,11 @@ site-navbar {
 .nav-overlap-section {
   position: relative;
   z-index: 1;
-  margin-top: calc(var(--tlc-nav-height) * -1);
   padding-top: var(--tlc-nav-height);
+}
+
+.hero-section.nav-overlap-section {
+  margin-top: calc(var(--tlc-nav-height) * -1);
 }
 
 .tlc-navbar.is-scrolled {
