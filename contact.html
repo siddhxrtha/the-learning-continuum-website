@@ -116,19 +116,26 @@
               <p class="programmes-subtitle mb-4">
                 Fill in your details and we will contact you shortly.
               </p>
-              <div class="alert alert-success d-none js-contact-success" role="status">
-                Thank you. Your enquiry has been submitted successfully.
-              </div>
-              <form id="enquiry-form" novalidate>
+              <form
+                id="enquiry-form"
+                name="enquiry"
+                method="POST"
+                action="/thank-you.html"
+                data-netlify="true"
+                netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="enquiry" />
+                <p class="visually-hidden" aria-hidden="true">
+                  <label>Do not fill this out if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+                </p>
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label class="form-label" for="parentName">Parent Name</label>
-                    <input class="form-control" id="parentName" name="parentName" required />
+                    <input class="form-control" id="parentName" name="parent_name" required />
                     <div class="invalid-feedback">Please enter parent name.</div>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="studentName">Student Name</label>
-                    <input class="form-control" id="studentName" name="studentName" required />
+                    <input class="form-control" id="studentName" name="student_name" required />
                     <div class="invalid-feedback">Please enter student name.</div>
                   </div>
                   <div class="col-md-6">
@@ -144,7 +151,7 @@
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="subject">Subject Interest</label>
-                    <select class="form-select" id="subject" name="subject" required>
+                    <select class="form-select" id="subject" name="subject_interest" required>
                       <option value="">Select subject</option>
                       <option>English</option>
                       <option>E-Math</option>
@@ -161,7 +168,7 @@
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="contactNumber">Contact Number</label>
-                    <input class="form-control" id="contactNumber" name="contactNumber" inputmode="numeric" pattern="[0-9+ ]{8,15}" required />
+                    <input class="form-control" id="contactNumber" name="contact_number" inputmode="numeric" pattern="[0-9+ ]{8,15}" required />
                     <div class="invalid-feedback">Please enter a valid contact number.</div>
                   </div>
                   <div class="col-md-6">
@@ -171,11 +178,11 @@
                   </div>
                   <div class="col-12">
                     <label class="form-label" for="preferredSlot">Preferred Trial Slot</label>
-                    <input class="form-control" id="preferredSlot" name="preferredSlot" placeholder="e.g. Saturday afternoon" />
+                    <input class="form-control" id="preferredSlot" name="preferred_trial_slot" placeholder="e.g. Saturday afternoon" />
                   </div>
                   <div class="col-12">
                     <label class="form-label" for="message">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Share your child’s current learning needs"></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Share your child's current learning needs"></textarea>
                   </div>
                   <div class="col-12 d-flex flex-column flex-sm-row gap-3">
                     <button class="btn btn-primary btn-micro px-4" type="submit">Submit Enquiry</button>

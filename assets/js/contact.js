@@ -4,6 +4,32 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  var isLocalDev = /^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname);
+
+  // Local static servers usually reject POST to HTML files (405).
+  // For local preview only, validate and then redirect to the thank-you page.
+  if (form.hasAttribute("data-netlify") && isLocalDev) {
+    form.addEventListener("submit", function (event) {
+      var isValid = form.checkValidity();
+      if (!isValid) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add("was-validated");
+        return;
+      }
+
+      event.preventDefault();
+      var successUrl = form.getAttribute("action") || "/thank-you.html";
+      window.location.assign(successUrl);
+    });
+    return;
+  }
+
+  // Netlify form submissions should post normally without JS interception.
+  if (form.hasAttribute("data-netlify")) {
+    return;
+  }
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     event.stopPropagation();
