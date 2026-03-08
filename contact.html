@@ -116,11 +116,14 @@
               <p class="programmes-subtitle mb-4">
                 Fill in your details and we will contact you shortly.
               </p>
+              <div id="enquiry-success" class="alert alert-success contact-success-message" role="status" aria-live="polite">
+                Thank you for your enquiry. We have received your submission and will contact you shortly.
+              </div>
               <form
                 id="enquiry-form"
                 name="enquiry"
                 method="POST"
-                action="/thank-you.html"
+                action="/contact.html#enquiry-success"
                 data-netlify="true"
                 netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="enquiry" />
@@ -130,12 +133,12 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label class="form-label" for="parentName">Parent Name</label>
-                    <input class="form-control" id="parentName" name="parent_name" required />
+                    <input class="form-control" id="parentName" name="parent_name" type="text" required />
                     <div class="invalid-feedback">Please enter parent name.</div>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="studentName">Student Name</label>
-                    <input class="form-control" id="studentName" name="student_name" required />
+                    <input class="form-control" id="studentName" name="student_name" type="text" required />
                     <div class="invalid-feedback">Please enter student name.</div>
                   </div>
                   <div class="col-md-6">
@@ -168,7 +171,7 @@
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="contactNumber">Contact Number</label>
-                    <input class="form-control" id="contactNumber" name="contact_number" inputmode="numeric" pattern="[0-9+ ]{8,15}" required />
+                    <input class="form-control" id="contactNumber" name="contact_number" type="tel" inputmode="numeric" pattern="[0-9+ ]{8,15}" required />
                     <div class="invalid-feedback">Please enter a valid contact number.</div>
                   </div>
                   <div class="col-md-6">
@@ -178,7 +181,7 @@
                   </div>
                   <div class="col-12">
                     <label class="form-label" for="preferredSlot">Preferred Trial Slot</label>
-                    <input class="form-control" id="preferredSlot" name="preferred_trial_slot" placeholder="e.g. Saturday afternoon" />
+                    <input class="form-control" id="preferredSlot" name="preferred_trial_slot" type="text" placeholder="e.g. Saturday afternoon" />
                   </div>
                   <div class="col-12">
                     <label class="form-label" for="message">Message</label>

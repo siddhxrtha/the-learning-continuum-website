@@ -1797,6 +1797,14 @@ site-navbar {
   border-radius: 1rem;
 }
 
+.contact-success-message {
+  display: none;
+}
+
+.contact-success-message:target {
+  display: block;
+}
+
 .contact-map-shell {
   border-radius: 1rem;
   border: 1px solid rgba(16, 63, 122, 0.14);
