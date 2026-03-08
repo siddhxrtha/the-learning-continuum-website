@@ -1790,11 +1790,75 @@ site-navbar {
   margin-bottom: 0.7rem;
 }
 
+.contact-enquiry-section {
+  background:
+    radial-gradient(85% 110% at 0% 0%, rgba(16, 63, 122, 0.08), rgba(16, 63, 122, 0)),
+    radial-gradient(85% 110% at 100% 100%, rgba(42, 99, 166, 0.08), rgba(42, 99, 166, 0)),
+    linear-gradient(180deg, #f8fbff 0%, #f3f8ff 100%);
+}
+
 .contact-form-shell {
-  border: 1px solid rgba(16, 63, 122, 0.14);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(16, 63, 122, 0.16);
   background: #ffffff;
-  box-shadow: 0 16px 30px rgba(11, 47, 89, 0.1);
-  border-radius: 1rem;
+  box-shadow: 0 18px 34px rgba(11, 47, 89, 0.11);
+  border-radius: 1.15rem;
+}
+
+.contact-form-shell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1b5aa5 0%, #77aced 100%);
+}
+
+.contact-form-shell .programmes-subtitle {
+  max-width: 60ch;
+}
+
+#enquiry-form .form-label {
+  font-weight: 600;
+  color: #1f3653;
+  margin-bottom: 0.4rem;
+}
+
+#enquiry-form .form-control,
+#enquiry-form .form-select {
+  border-radius: 0.75rem;
+  border: 1px solid #c7d8eb;
+  padding: 0.7rem 0.85rem;
+  color: #2a4058;
+  background-color: #fcfdff;
+}
+
+#enquiry-form .form-control:focus,
+#enquiry-form .form-select:focus {
+  border-color: #3f78ba;
+  box-shadow: 0 0 0 0.22rem rgba(33, 98, 171, 0.16);
+  background-color: #ffffff;
+}
+
+#enquiry-form textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+#enquiry-form .btn {
+  min-width: 170px;
+}
+
+@media (max-width: 767.98px) {
+  .contact-form-shell {
+    border-radius: 1rem;
+  }
+
+  #enquiry-form .btn {
+    width: 100%;
+  }
 }
 
 .contact-success-message {
@@ -1803,19 +1867,6 @@ site-navbar {
 
 .contact-success-message:target {
   display: block;
-}
-
-.contact-map-shell {
-  border-radius: 1rem;
-  border: 1px solid rgba(16, 63, 122, 0.14);
-  overflow: hidden;
-  box-shadow: 0 16px 28px rgba(11, 47, 89, 0.1);
-}
-
-.contact-map-shell iframe {
-  width: 100%;
-  min-height: 320px;
-  border: 0;
 }
 
 .site-footer-extended .footer-contact-shell {
