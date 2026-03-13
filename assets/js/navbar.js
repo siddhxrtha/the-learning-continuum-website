@@ -30,6 +30,7 @@ function initSiteNavbar(navRoot) {
       var pageKey = link.dataset.page || "";
       var isActive = pageKey === currentPage;
       link.classList.toggle("is-active", isActive);
+      link.classList.toggle("active", isActive);
       if (isActive) {
         link.setAttribute("aria-current", "page");
       } else {
@@ -88,8 +89,15 @@ if (!customElements.get("site-navbar")) {
           <div class="container-fluid px-3 px-lg-4">
             <div class="tlc-nav-shell w-100">
               <a class="navbar-brand tlc-brand" href="${brandHref}" aria-label="The Learning Continuum home">
-                <span class="tlc-brand-dot" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
-                <span class="tlc-brand-text">The Learning Continuum</span>
+                <span class="tlc-brand-badge">
+                  <img
+                    class="tlc-brand-logo"
+                    src="tlc_logo.png"
+                    alt="The Learning Continuum"
+                    width="582"
+                    height="429"
+                  >
+                </span>
               </a>
               <button class="navbar-toggler tlc-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-controls="${collapseId}" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list" aria-hidden="true"></i>
