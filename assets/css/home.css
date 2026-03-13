@@ -1418,8 +1418,6 @@ site-navbar {
 
   .nav-overlap-section.hero-section .hero-overlay-content .hero-content {
     justify-content: flex-start;
-    padding-top: calc(var(--tlc-nav-height) + clamp(84px, 13vh, 128px));
-    padding-bottom: clamp(28px, 5vh, 48px);
   }
 
   .review-source-google {
@@ -1475,6 +1473,15 @@ site-navbar {
 }
 
 @media (max-width: 1199.98px) {
+  .hero-section.nav-overlap-section .hero-overlay-content {
+    top: var(--tlc-nav-height);
+  }
+
+  .nav-overlap-section.hero-section .hero-overlay-content .hero-content {
+    padding-top: clamp(280px, 36vh, 440px);
+    padding-bottom: clamp(28px, 5vh, 48px);
+  }
+
   .footer-section {
     padding-top: 3.5rem !important;
   }
