@@ -1413,7 +1413,7 @@ site-navbar {
 
 @media (max-width: 767.98px) {
   .hero-section {
-    --hero-fixed-height: clamp(720px, 100svh, 960px);
+    --hero-fixed-height: clamp(1260px, 176svh, 1660px);
   }
 
   .nav-overlap-section.hero-section .hero-overlay-content .hero-content {
@@ -1473,6 +1473,10 @@ site-navbar {
 }
 
 @media (max-width: 1199.98px) {
+  .hero-section {
+    --hero-fixed-height: clamp(1040px, 140vh, 1400px);
+  }
+
   .hero-section.nav-overlap-section .hero-overlay-content {
     top: var(--tlc-nav-height);
   }
