@@ -41,6 +41,40 @@
         data-bs-touch="false"
         data-bs-keyboard="false"
       >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+        </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div
@@ -88,15 +122,33 @@
             ></div>
           </div>
         </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+          aria-label="Previous slide"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+          aria-label="Next slide"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
       </div>
 
       <div class="hero-overlay-content">
         <div class="container">
           <div
-            class="row align-items-center justify-content-center hero-content"
+            class="row align-items-center justify-content-start hero-content"
           >
             <div
-              class="col-xl-9 col-lg-10 col-md-11 text-white text-center mx-auto js-reveal"
+              class="col-xl-5 col-lg-6 col-md-8 text-start js-reveal"
               data-reveal="up"
             >
               <div class="hero-glass">
@@ -125,13 +177,12 @@
                   >
                 </div>
                 <div class="row g-3 mt-4 hero-metrics justify-content-center">
-                  <div class="col-sm-4">
+                  <div class="col-6">
                     <div class="hero-metric-item">
                       <p class="hero-metric-number mb-1">
                         <span
                           class="js-stat-counter"
-                          data-target="18"
-                          data-suffix="+"
+                          data-target="20"
                           >0</span
                         >
                       </p>
@@ -140,20 +191,7 @@
                       </p>
                     </div>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="hero-metric-item">
-                      <p class="hero-metric-number mb-1">
-                        <span
-                          class="js-stat-counter"
-                          data-target="5000"
-                          data-suffix="+"
-                          >0</span
-                        >
-                      </p>
-                      <p class="hero-metric-label mb-0">Students Guided</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
+                  <div class="col-6">
                     <div class="hero-metric-item">
                       <p class="hero-metric-number mb-1">
                         <span
@@ -302,31 +340,19 @@
             English
           </div>
           <div class="subject-tile js-reveal" data-reveal-delay="40">
-            Elementary Mathematics
+            E Maths
           </div>
           <div class="subject-tile js-reveal" data-reveal-delay="80">
-            Additional Mathematics
+            A Maths
           </div>
           <div class="subject-tile js-reveal" data-reveal-delay="120">
-            Science
+            Chemistry
           </div>
           <div class="subject-tile js-reveal" data-reveal-delay="160">
-            Pure Chemistry
+            Physics
           </div>
           <div class="subject-tile js-reveal" data-reveal-delay="200">
-            Pure Biology
-          </div>
-          <div class="subject-tile js-reveal" data-reveal-delay="240">
-            Pure Physics
-          </div>
-          <div class="subject-tile js-reveal" data-reveal-delay="280">
-            Combined Chemistry
-          </div>
-          <div class="subject-tile js-reveal" data-reveal-delay="320">
-            Combined Biology
-          </div>
-          <div class="subject-tile js-reveal" data-reveal-delay="360">
-            Combined Physics
+            Science
           </div>
         </div>
 
@@ -335,16 +361,10 @@
         </div>
         <div class="levels-grid">
           <div class="level-tile js-reveal" data-reveal-delay="0">
-            Lower Secondary G2
+            Primary
           </div>
           <div class="level-tile js-reveal" data-reveal-delay="60">
-            Lower Secondary G3
-          </div>
-          <div class="level-tile js-reveal" data-reveal-delay="120">
-            Upper Secondary G2
-          </div>
-          <div class="level-tile js-reveal" data-reveal-delay="180">
-            Upper Secondary G3
+            Secondary
           </div>
         </div>
       </div>
@@ -378,7 +398,7 @@
                 <i class="bi bi-star-fill"></i>
               </div>
               <h3 class="h5 fw-bold mb-2 trust-card-heading">
-                4.9 Google Rating
+                5.0 Google Rating
               </h3>
               <p class="mb-0 trust-support-text">
                 Consistently praised by parents for clear teaching and strong
@@ -397,7 +417,7 @@
               </div>
               <h3 class="h5 fw-bold mb-2 trust-card-heading">Since 2006</h3>
               <p class="mb-0 trust-support-text">
-                <span class="js-counter" data-target="18" data-suffix="+"
+                <span class="js-counter" data-target="20" data-suffix="+"
                   >0</span
                 >
                 years of academic guidance and exam-focused coaching.
@@ -530,7 +550,7 @@
                 height="16"
               />
               <span>Google Reviews</span>
-              <span class="review-source-score">4.9</span>
+              <span class="review-source-score">5.0</span>
             </div>
             <p class="google-source-note mb-0">
               Showing verified public feedback from Google only.
@@ -540,7 +560,7 @@
           <div class="overall-rating-panel text-center">
             <p class="overall-rating-label mb-1">Overall Rating</p>
             <div class="overall-rating-line">
-              <span class="overall-rating-score">4.9</span>
+              <span class="overall-rating-score">5.0</span>
               <div class="review-stars" aria-label="5 star rating">
                 <svg class="rating-star" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -568,9 +588,7 @@
                   ></path>
                 </svg>
               </div>
-              <span class="overall-rating-count"
-                >(20+ recent Google reviews)</span
-              >
+              <span class="overall-rating-count">(60 Google reviews)</span>
             </div>
             <img
               class="google-wordmark"
@@ -590,7 +608,7 @@
                 <div class="review-author">
                   <div class="review-avatar">AT</div>
                   <div>
-                    <h3 class="h6 mb-1">Alva Tan</h3>
+                    <h3 class="h6 mb-1">alya tan</h3>
                     <p class="review-time mb-0">1 review - 3 weeks ago - New</p>
                   </div>
                 </div>
@@ -1526,8 +1544,10 @@
 
           <div class="text-center mt-4">
             <a
-              class="btn btn-outline-primary px-4 btn-micro"
-              href="#"
+              class="btn btn-outline-primary px-4 btn-micro reviews-google-cta"
+              href="https://www.google.com/maps/search/?api=1&query=The%20Learning%20Continuum%20Pte%20Ltd%20Google%20reviews"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="View all reviews on Google"
               >View All Reviews on Google</a
             >
@@ -1545,12 +1565,12 @@
           <p class="programmes-kicker mb-2">What We Teach</p>
           <h2 class="fw-bold mb-2">Programmes We Offer</h2>
           <p class="programmes-subtitle mb-0">
-            Primary and Secondary tuition for core exam subjects, plus Creative
-            Writing for P5 and P6.
+            Primary and Secondary tuition focused on core academic subjects and
+            exam success.
           </p>
         </div>
-        <div class="row g-4 programmes-grid">
-          <div class="col-md-6 col-lg-4">
+        <div class="row g-4 programmes-grid justify-content-center">
+          <div class="col-md-6 col-lg-5">
             <article
               class="card h-100 programme-card programme-card--psle border-0 rounded-4 shadow-sm elevate-card js-reveal"
               data-reveal-delay="0"
@@ -1579,7 +1599,7 @@
               </div>
             </article>
           </div>
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-5">
             <article
               class="card h-100 programme-card programme-card--secondary border-0 rounded-4 shadow-sm elevate-card js-reveal"
               data-reveal-delay="90"
@@ -1606,192 +1626,6 @@
                   <i class="bi bi-arrow-right" aria-hidden="true"></i
                 ></a>
               </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <article
-              class="card h-100 programme-card programme-card--foundation border-0 rounded-4 shadow-sm elevate-card js-reveal"
-              data-reveal-delay="170"
-            >
-              <div class="card-body p-4 d-flex flex-column">
-                <div class="programme-meta mb-3">
-                  <span class="programme-pill">Primary 5 and 6</span>
-                  <span class="programme-time">Creative Writing</span>
-                </div>
-                <h3 class="h5 fw-semibold mb-3">Creative Writing Class</h3>
-                <p class="mb-3 text-secondary">
-                  Focused writing lessons for students preparing for upper
-                  primary English assessments.
-                </p>
-                <ul class="programme-list list-unstyled mb-4">
-                  <li>For P5 and P6 students</li>
-                  <li>Essay structure and idea development</li>
-                  <li>Regular writing practice with feedback</li>
-                </ul>
-                <a
-                  class="programme-link mt-auto"
-                  href="contact.html#enquiry-form"
-                  >Ask About Writing
-                  <i class="bi bi-arrow-right" aria-hidden="true"></i
-                ></a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="teachers" class="section-space">
-      <div class="container">
-        <div
-          class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4 mb-lg-5 js-reveal"
-          data-reveal="up"
-        >
-          <div>
-            <h2 class="fw-bold mb-2">Featured Teachers</h2>
-            <p class="programmes-subtitle mb-0">
-              Specialist tutors committed to student growth.
-            </p>
-          </div>
-          <a
-            class="btn btn-outline-primary btn-micro px-4 py-2 subjects-cta"
-            href="teachers.html#teachers-section"
-            >Meet All Teachers</a
-          >
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-xl-4">
-            <article
-              class="featured-teacher-card h-100 js-reveal"
-              data-reveal-delay="0"
-            >
-              <img
-                class="featured-teacher-image"
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80"
-                alt="Mr Jeremy Wong, English specialist"
-              />
-              <div class="p-4">
-                <h3 class="h4 mb-2">Mr Jeremy Wong</h3>
-                <p class="featured-teacher-role mb-2">English Specialist</p>
-                <p class="featured-teacher-qual mb-2">B.A. (Hons), NIE PGDE</p>
-                <p class="featured-teacher-exp mb-2">
-                  <strong>Experience:</strong> 12 years
-                </p>
-                <p class="mb-0 featured-teacher-copy">
-                  "Strong writing skills come from clear structure, repeated
-                  practice, and actionable feedback."
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-4">
-            <article
-              class="featured-teacher-card h-100 js-reveal"
-              data-reveal-delay="90"
-            >
-              <img
-                class="featured-teacher-image"
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1000&q=80"
-                alt="Ms Elaine Tan, E-Math and A-Math tutor"
-              />
-              <div class="p-4">
-                <h3 class="h4 mb-2">Ms Elaine Tan</h3>
-                <p class="featured-teacher-role mb-2">E-Math &amp; A-Math</p>
-                <p class="featured-teacher-qual mb-2">M.Sc (NUS)</p>
-                <p class="featured-teacher-exp mb-2">
-                  <strong>Experience:</strong> 11 years
-                </p>
-                <p class="mb-0 featured-teacher-copy">
-                  "Students improve fastest when concepts are broken down and
-                  practiced with increasing challenge."
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-4">
-            <article
-              class="featured-teacher-card h-100 js-reveal"
-              data-reveal-delay="180"
-            >
-              <img
-                class="featured-teacher-image"
-                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=1000&q=80"
-                alt="Mr Adrian Lim, Physics specialist"
-              />
-              <div class="p-4">
-                <h3 class="h4 mb-2">Mr Adrian Lim</h3>
-                <p class="featured-teacher-role mb-2">Physics Specialist</p>
-                <p class="featured-teacher-qual mb-2">B.Eng (Hons)</p>
-                <p class="featured-teacher-exp mb-2">
-                  <strong>Experience:</strong> 9 years
-                </p>
-                <p class="mb-0 featured-teacher-copy">
-                  "Physics becomes manageable when students connect formulas to
-                  real-world logic and exam patterns."
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-space home-testimonials-preview border-top">
-      <div class="container">
-        <div
-          class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4 mb-lg-5 js-reveal"
-          data-reveal="up"
-        >
-          <div>
-            <h2 class="fw-bold mb-2">Student Testimonials</h2>
-            <p class="programmes-subtitle mb-0">
-              Trusted by parents across Singapore.
-            </p>
-          </div>
-          <a
-            class="btn btn-outline-primary btn-micro px-4 py-2 subjects-cta"
-            href="testimonials.html"
-            >See More Reviews</a
-          >
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-xl-4">
-            <article
-              class="home-testimonial-card h-100 js-reveal"
-              data-reveal-delay="0"
-            >
-              <p class="home-testimonial-quote mb-3">
-                "My son improved from C6 to B3 in just two terms. The feedback
-                to parents is very clear and consistent."
-              </p>
-              <p class="home-testimonial-author mb-0">
-                Mrs Chua, Parent of Sec 3 Student
-              </p>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-4">
-            <article
-              class="home-testimonial-card h-100 js-reveal"
-              data-reveal-delay="80"
-            >
-              <p class="home-testimonial-quote mb-3">
-                "A-Math finally makes sense now. Lessons are structured and I
-                know exactly what to revise each week."
-              </p>
-              <p class="home-testimonial-author mb-0">Aqil, Sec 4 Student</p>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-4">
-            <article
-              class="home-testimonial-card h-100 js-reveal"
-              data-reveal-delay="150"
-            >
-              <p class="home-testimonial-quote mb-3">
-                "The teachers are patient and motivating. My daughter is much
-                more confident in Science and English now."
-              </p>
-              <p class="home-testimonial-author mb-0">
-                Mr Raj, Parent of Sec 2 Student
-              </p>
             </article>
           </div>
         </div>
@@ -1862,30 +1696,27 @@
           Ready to Support Your Child's Academic Journey?
         </h2>
         <p class="lead mb-4 js-reveal" data-reveal="up" data-reveal-delay="80">
-          Join over 5,000+ students who have achieved their academic goals with
-          us.
+          Join us and help your child achieve their academic goals with
+          confidence.
         </p>
         <a
           class="btn btn-light btn-lg px-4 mb-4 btn-micro js-reveal"
           href="contact.html#enquiry-form"
           data-reveal="up"
           data-reveal-delay="140"
-          >Schedule a Consultation</a
+          >Find Out More</a
         >
         <div
           class="d-flex flex-column flex-sm-row justify-content-center gap-4"
         >
           <p class="mb-0 fw-semibold">
-            <span class="js-stat-counter" data-target="18" data-suffix="+"
+            <span class="js-stat-counter" data-target="20" data-suffix="+"
               >0</span
             >
             Years Experience
           </p>
           <p class="mb-0 fw-semibold">
-            <span class="js-stat-counter" data-target="5" data-suffix="k+"
-              >0</span
-            >
-            Happy Students
+            Many Happy Students
           </p>
         </div>
       </div>
@@ -1952,7 +1783,6 @@
               <ul class="footer-link-list">
                 <li><a href="programmes.html">Primary School Tuition</a></li>
                 <li><a href="programmes.html">Secondary School Tuition</a></li>
-                <li><a href="programmes.html">Creative Writing</a></li>
               </ul>
             </div>
             <div class="col-lg-3">

@@ -95,7 +95,9 @@
         border: 1px solid rgba(20, 53, 95, 0.12);
         box-shadow: 0 12px 30px rgba(15, 33, 61, 0.08);
         background: #fff;
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
           border-color 0.3s ease;
         will-change: transform;
       }
@@ -155,59 +157,41 @@
         color: #14365f;
       }
 
-      .teacher-photo {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid rgba(21, 83, 158, 0.14);
-      }
-
       .team-highlight {
         border-left: 4px solid #2f74c7;
         background: #f5f9ff;
         color: #314862;
       }
 
-      .milestones-card {
-        border-radius: 1.25rem;
-        border: 1px solid rgba(20, 53, 95, 0.12);
-        box-shadow: 0 12px 30px rgba(15, 33, 61, 0.08);
-        background: #fff;
-        padding: 2rem;
-      }
-
-      .milestone-list {
-        border-left: 4px solid #e2c49f;
-        padding-left: 1.25rem;
-        display: grid;
-        gap: 1.3rem;
-      }
-
-      .milestone-list h3 {
-        margin-bottom: 0.3rem;
-      }
-
-      .milestone-list p {
-        margin-bottom: 0;
-        color: #4f647b;
-      }
-
       .community-card {
-        border-radius: 1.25rem;
-        background: linear-gradient(120deg, #08254a 0%, #10396e 100%);
+        position: relative;
+        overflow: hidden;
+        border-radius: 0;
+        background:
+          linear-gradient(120deg, rgba(8, 37, 74, 0.96) 0%, rgba(16, 57, 110, 0.96) 58%, rgba(9, 31, 59, 0.98) 100%),
+          radial-gradient(70% 100% at 0% 100%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
         color: #fff;
-        box-shadow: 0 20px 40px rgba(12, 34, 66, 0.24);
-        padding: 2.2rem;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        box-shadow: 0 22px 46px rgba(12, 34, 66, 0.26);
+        padding: clamp(3.25rem, 7vw, 5.25rem) clamp(1.25rem, 4vw, 3rem);
+        text-align: center;
       }
 
       .community-card h2,
       .community-card p {
         color: #fff;
+      }
+
+      .community-card h2 {
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .community-card p {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .nurture-section-label {
@@ -227,7 +211,9 @@
         padding: 2rem;
         min-height: 100%;
         box-shadow: 0 16px 34px rgba(15, 33, 61, 0.12);
-        transition: transform 0.32s ease, box-shadow 0.32s ease,
+        transition:
+          transform 0.32s ease,
+          box-shadow 0.32s ease,
           opacity 0.55s ease;
       }
 
@@ -316,7 +302,8 @@
                 ><i class="bi bi-stars me-1"></i>Engaging Lessons</span
               >
               <span class="hero-fun-pill"
-                ><i class="bi bi-people-fill me-1"></i>Small Class Attention</span
+                ><i class="bi bi-people-fill me-1"></i>Small Class
+                Attention</span
               >
               <span class="hero-fun-pill"
                 ><i class="bi bi-trophy-fill me-1"></i>Exam Readiness</span
@@ -354,9 +341,9 @@
             <article class="about-story-card p-4 p-lg-5 h-100">
               <h2 class="fw-bold mb-3">Our Story</h2>
               <p class="mb-3">
-                The Learning Continuum began with a simple goal: to give students
-                clear learning pathways and steady academic support beyond school
-                hours.
+                The Learning Continuum began with a simple goal: to give
+                students clear learning pathways and steady academic support
+                beyond school hours.
               </p>
               <p class="mb-3">
                 Since 2006, we have helped students strengthen foundations and
@@ -436,7 +423,7 @@
           </div>
           <div class="col-lg-5">
             <img
-              src="assets/images/founder.jpeg"
+              src="assets/images/mr.jpeg"
               alt="Founder of The Learning Continuum"
               class="founder-portrait"
             />
@@ -449,35 +436,50 @@
     <section class="section-space pt-0">
       <div class="container">
         <div class="text-center mb-5">
-          <p class="nurture-section-label mb-2">NURTURING EXAM-CONFIDENT LEARNERS</p>
+          <p class="nurture-section-label mb-2">
+            NURTURING EXAM-CONFIDENT LEARNERS
+          </p>
           <h2 class="fw-bold mb-3">
             We’re committed to helping every student reach their potential.
           </h2>
           <p class="programmes-subtitle nurture-intro mx-auto mb-0">
-            We believe that with the right structure and support, every student can improve. At The Learning Continuum, we combine clear teaching, small classes, and consistent practice so students build confidence and perform their best.
+            We believe that with the right structure and support, every student
+            can improve. At The Learning Continuum, we combine clear teaching,
+            small classes, and consistent practice so students build confidence
+            and perform their best.
           </p>
         </div>
 
         <div class="row g-4">
           <div class="col-lg-6">
-            <article class="nurture-card nurture-card--blue reveal-panel from-left">
+            <article
+              class="nurture-card nurture-card--blue reveal-panel from-left"
+            >
               <h3 class="h4 fw-bold mb-3">Structured Learning Materials</h3>
               <p class="mb-3">
-                Students receive carefully curated notes, worksheets, and practice sets designed to build mastery step-by-step.
+                Students receive carefully curated notes, worksheets, and
+                practice sets designed to build mastery step-by-step.
               </p>
               <p class="mb-0">
-                Our materials are aligned with the Singapore syllabus and focus on the core skills needed for PSLE, N-Level, and O-Level success - so students practise with purpose, not guesswork.
+                Our materials are aligned with the Singapore syllabus and focus
+                on the core skills needed for PSLE, N-Level, and O-Level success
+                - so students practise with purpose, not guesswork.
               </p>
             </article>
           </div>
           <div class="col-lg-6">
-            <article class="nurture-card nurture-card--orange reveal-panel from-right">
+            <article
+              class="nurture-card nurture-card--orange reveal-panel from-right"
+            >
               <h3 class="h4 fw-bold mb-3">Student-Focused Support</h3>
               <p class="mb-3">
-                We go beyond lesson time by answering questions, tracking progress, and guiding students on how to improve week by week.
+                We go beyond lesson time by answering questions, tracking
+                progress, and guiding students on how to improve week by week.
               </p>
               <p class="mb-0">
-                Parents also receive clear updates and can speak with our tutors on how to support learning at home, ensuring students stay confident, motivated, and consistent.
+                Parents also receive clear updates and can speak with our tutors
+                on how to support learning at home, ensuring students stay
+                confident, motivated, and consistent.
               </p>
             </article>
           </div>
@@ -504,10 +506,13 @@
               </div>
               <h3 class="h5 fw-semibold mb-3">Strong Academic Foundations</h3>
               <p class="mb-2 text-secondary">
-                We help students build solid understanding in core subjects through clear explanations and structured lessons.
+                We help students build solid understanding in core subjects
+                through clear explanations and structured lessons.
               </p>
               <p class="mb-0 text-secondary">
-                By focusing on fundamentals first, students develop confidence in tackling more advanced concepts and challenging exam questions.
+                By focusing on fundamentals first, students develop confidence
+                in tackling more advanced concepts and challenging exam
+                questions.
               </p>
             </article>
           </div>
@@ -518,10 +523,12 @@
               </div>
               <h3 class="h5 fw-semibold mb-3">Small Class Attention</h3>
               <p class="mb-2 text-secondary">
-                Our small class sizes allow teachers to closely monitor each student’s progress and learning needs.
+                Our small class sizes allow teachers to closely monitor each
+                student’s progress and learning needs.
               </p>
               <p class="mb-0 text-secondary">
-                With more personalised guidance, students can ask questions freely and receive targeted feedback to improve faster.
+                With more personalised guidance, students can ask questions
+                freely and receive targeted feedback to improve faster.
               </p>
             </article>
           </div>
@@ -532,10 +539,12 @@
               </div>
               <h3 class="h5 fw-semibold mb-3">Exam Confidence</h3>
               <p class="mb-2 text-secondary">
-                We prepare students for major examinations with proven strategies, practice papers, and step-by-step guidance.
+                We prepare students for major examinations with proven
+                strategies, practice papers, and step-by-step guidance.
               </p>
               <p class="mb-0 text-secondary">
-                Through consistent practice and review, students become familiar with exam formats and perform with greater confidence.
+                Through consistent practice and review, students become familiar
+                with exam formats and perform with greater confidence.
               </p>
             </article>
           </div>
@@ -549,32 +558,32 @@
         <div class="text-center mb-4">
           <h2 class="fw-bold mb-2">Results That Build Confidence</h2>
         </div>
-        <div class="row g-3 g-lg-4">
-          <div class="col-6 col-lg-3">
+        <div class="row g-3 g-lg-4 justify-content-center">
+          <div class="col-6 col-lg-4">
             <article class="stat-card h-100 text-center p-4">
               <p class="stat-value mb-2">
-                <span class="js-stat-counter" data-target="18" data-suffix="+">0</span>
+                <span class="js-stat-counter" data-target="20" data-suffix="+"
+                  >0</span
+                >
               </p>
               <p class="mb-0 fw-semibold">Years Experience</p>
             </article>
           </div>
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <article class="stat-card h-100 text-center p-4">
               <p class="stat-value mb-2">
-                <span class="js-stat-counter" data-target="5000" data-suffix="+">0</span>
-              </p>
-              <p class="mb-0 fw-semibold">Students Guided</p>
-            </article>
-          </div>
-          <div class="col-6 col-lg-3">
-            <article class="stat-card h-100 text-center p-4">
-              <p class="stat-value mb-2">
-                <span class="js-stat-counter" data-target="49" data-scale="10" data-decimals="1">0</span>/5
+                <span
+                  class="js-stat-counter"
+                  data-target="50"
+                  data-scale="10"
+                  data-decimals="1"
+                  >0</span
+                >/5
               </p>
               <p class="mb-0 fw-semibold">Parent Rating</p>
             </article>
           </div>
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <article class="stat-card h-100 text-center p-4">
               <p class="stat-value mb-2">Small</p>
               <p class="mb-0 fw-semibold">Group Classes</p>
@@ -585,7 +594,9 @@
         <div class="student-journey-card p-4 p-lg-5 mt-4">
           <div class="row g-4 align-items-center">
             <div class="col-lg-8">
-              <h3 class="h4 fw-bold mb-2">What Parents and Students Value Most</h3>
+              <h3 class="h4 fw-bold mb-2">
+                What Parents and Students Value Most
+              </h3>
               <p class="mb-0 text-secondary">
                 Families consistently tell us they appreciate our clear lesson
                 structure, regular progress updates, and patient teaching style.
@@ -595,10 +606,18 @@
             </div>
             <div class="col-lg-4">
               <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-                <span class="badge rounded-pill text-bg-light border px-3 py-2">Clear Explanations</span>
-                <span class="badge rounded-pill text-bg-light border px-3 py-2">Weekly Practice</span>
-                <span class="badge rounded-pill text-bg-light border px-3 py-2">Exam Focus</span>
-                <span class="badge rounded-pill text-bg-light border px-3 py-2">Progress Tracking</span>
+                <span class="badge rounded-pill text-bg-light border px-3 py-2"
+                  >Clear Explanations</span
+                >
+                <span class="badge rounded-pill text-bg-light border px-3 py-2"
+                  >Weekly Practice</span
+                >
+                <span class="badge rounded-pill text-bg-light border px-3 py-2"
+                  >Exam Focus</span
+                >
+                <span class="badge rounded-pill text-bg-light border px-3 py-2"
+                  >Progress Tracking</span
+                >
               </div>
             </div>
           </div>
@@ -606,48 +625,22 @@
       </div>
     </section>
 
-    <!-- MILESTONES + COMMUNITY CTA -->
-    <section class="section-space bg-light">
+    <!-- COMMUNITY CTA -->
+    <section class="section-space bg-light px-3">
       <div class="container">
-        <div class="row g-4 g-lg-5 align-items-stretch">
-          <div class="col-lg-6">
-            <article class="milestones-card h-100">
-              <h2 class="fw-bold mb-4">Milestones</h2>
-              <div class="milestone-list">
-                <div>
-                  <h3 class="h4 fw-semibold">2006 - Centre Founded</h3>
-                  <p>Started with two classes in Thomson with 18 pioneer students.</p>
-                </div>
-                <div>
-                  <h3 class="h4 fw-semibold">2020 - Expanded Programmes</h3>
-                  <p>Introduced full G2 and G3 pathways in Mathematics and Science.</p>
-                </div>
-                <div>
-                  <h3 class="h4 fw-semibold">2023 - Parent Partnership Model</h3>
-                  <p>Launched structured monthly progress consultations.</p>
-                </div>
-                <div>
-                  <h3 class="h4 fw-semibold">2026 - 1,500+ Families Supported</h3>
-                  <p>Continued growth driven by referrals and results.</p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-lg-6">
-            <article class="community-card h-100">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <article class="community-card">
               <h2 class="fw-bold mb-3">Join Our Learning Community</h2>
               <p class="lead mb-4">
                 Speak with our academic team and discover the best class fit for
                 your child.
               </p>
-              <div class="d-flex flex-column flex-sm-row gap-3">
-                <a class="btn btn-light btn-lg px-4 btn-micro" href="contact.html"
-                  >Contact Us</a
-                >
+              <div class="d-flex justify-content-center">
                 <a
-                  class="btn btn-outline-light btn-lg px-4 btn-micro"
-                  href="contact.html#enquiry-form"
-                  >Book Trial</a
+                  class="btn btn-light btn-lg px-4 btn-micro"
+                  href="contact.html"
+                  >Contact Us</a
                 >
               </div>
             </article>
@@ -676,13 +669,31 @@
               <p class="footer-kicker mb-2">The Learning Continuum Pte Ltd</p>
               <h2 class="h4 fw-bold mb-3">Premium Singapore Tuition Support</h2>
               <p class="footer-lead mb-3">
-                Trusted since 2006 for PSLE, N Level and O Level preparation with
-                structured teaching and small classes.
+                Trusted since 2006 for PSLE, N Level and O Level preparation
+                with structured teaching and small classes.
               </p>
               <div class="footer-socials">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  ><i class="bi bi-youtube"></i
+                ></a>
               </div>
             </div>
             <div class="col-6 col-lg-2">
@@ -707,13 +718,32 @@
               <h3 class="footer-grid-title">Contact</h3>
               <ul class="footer-link-list mb-3">
                 <li><a href="tel:+6597533888">+65 9753 3888</a></li>
-                <li><a href="mailto:hello@thelearningcontinuum.sg">hello@thelearningcontinuum.sg</a></li>
-                <li><a href="https://maps.google.com/?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632" target="_blank" rel="noopener noreferrer">632 Ang Mo Kio Ave 4, #01-964, Singapore 560632</a></li>
+                <li>
+                  <a href="mailto:hello@thelearningcontinuum.sg"
+                    >hello@thelearningcontinuum.sg</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://maps.google.com/?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >632 Ang Mo Kio Ave 4, #01-964, Singapore 560632</a
+                  >
+                </li>
               </ul>
               <form class="js-newsletter-form" novalidate>
-                <label class="small fw-semibold mb-2" for="newsletter-about">Newsletter Updates</label>
+                <label class="small fw-semibold mb-2" for="newsletter-about"
+                  >Newsletter Updates</label
+                >
                 <div class="input-group newsletter-input-group">
-                  <input id="newsletter-about" type="email" class="form-control" placeholder="Email address" required />
+                  <input
+                    id="newsletter-about"
+                    type="email"
+                    class="form-control"
+                    placeholder="Email address"
+                    required
+                  />
                   <button class="btn btn-primary" type="submit">Join</button>
                 </div>
               </form>
@@ -750,7 +780,8 @@
           class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2 small text-secondary mt-4"
         >
           <p class="mb-0">
-            &copy; <span class="js-current-year">2026</span> The Learning Continuum. All rights reserved.
+            &copy; <span class="js-current-year">2026</span> The Learning
+            Continuum. All rights reserved.
           </p>
           <p class="mb-0">Privacy Policy | Terms of Use</p>
         </div>
@@ -772,7 +803,7 @@
         if (!panels.length) return;
 
         const reduceMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
+          "(prefers-reduced-motion: reduce)",
         ).matches;
 
         if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -792,7 +823,7 @@
           {
             threshold: 0.2,
             rootMargin: "0px 0px -10% 0px",
-          }
+          },
         );
 
         panels.forEach((panel) => observer.observe(panel));

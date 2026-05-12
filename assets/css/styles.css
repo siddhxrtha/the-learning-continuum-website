@@ -139,17 +139,6 @@ body {
   color: var(--tlc-blue-dark);
 }
 
-.teacher-avatar {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #ffffff;
-  font-weight: 700;
-  background-color: #8fa2b8;
-}
-
 .cta-section {
   background-color: var(--tlc-blue);
 }
