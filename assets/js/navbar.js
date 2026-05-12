@@ -9,8 +9,8 @@ function initSiteNavbar(navRoot) {
     { key: "about", test: /about\.html$/i },
     { key: "programmes", test: /programmes\.html$/i },
     { key: "schedule", test: /schedule\.html$/i },
-    { key: "teachers", test: /teachers\.html$/i },
     { key: "testimonials", test: /testimonials\.html$/i },
+    { key: "gallery", test: /gallery\.html$/i },
     { key: "faq", test: /faq\.html$/i },
     { key: "contact", test: /contact\.html$/i },
     { key: "results", test: /results\.html$/i }
@@ -108,8 +108,8 @@ if (!customElements.get("site-navbar")) {
                   <li class="nav-item"><a class="nav-link js-nav-link" data-page="about" href="about.html">About Us</a></li>
                   <li class="nav-item"><a class="nav-link js-nav-link" data-page="programmes" href="programmes.html">Programmes</a></li>
                   <li class="nav-item"><a class="nav-link js-nav-link" data-page="schedule" href="schedule.html">Schedules</a></li>
-                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="teachers" href="teachers.html">Teachers</a></li>
                   <li class="nav-item"><a class="nav-link js-nav-link" data-page="testimonials" href="testimonials.html">Testimonials</a></li>
+                  <li class="nav-item"><a class="nav-link js-nav-link" data-page="gallery" href="gallery.html">Gallery</a></li>
                   <li class="nav-item"><a class="nav-link js-nav-link" data-page="faq" href="faq.html">FAQ</a></li>
                   <li class="nav-item"><a class="nav-link js-nav-link" data-page="contact" href="contact.html">Contact</a></li>
                   <li class="nav-item ms-lg-auto mt-3 mt-lg-0 d-grid d-lg-block">

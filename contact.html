@@ -144,31 +144,13 @@
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="level">Level</label>
-                    <select class="form-select" id="level" name="level" required>
-                      <option value="">Select level</option>
-                      <option>Lower Secondary G2</option>
-                      <option>Lower Secondary G3</option>
-                      <option>Upper Secondary G2</option>
-                      <option>Upper Secondary G3</option>
-                    </select>
-                    <div class="invalid-feedback">Please select a level.</div>
+                    <input class="form-control" id="level" name="level" type="text" required />
+                    <div class="invalid-feedback">Please enter a level.</div>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="subject">Subject Interest</label>
-                    <select class="form-select" id="subject" name="subject_interest" required>
-                      <option value="">Select subject</option>
-                      <option>English</option>
-                      <option>E-Math</option>
-                      <option>A-Math</option>
-                      <option>Science</option>
-                      <option>Pure Chemistry</option>
-                      <option>Pure Biology</option>
-                      <option>Pure Physics</option>
-                      <option>Combined Chemistry</option>
-                      <option>Combined Biology</option>
-                      <option>Combined Physics</option>
-                    </select>
-                    <div class="invalid-feedback">Please select a subject.</div>
+                    <input class="form-control" id="subject" name="subject_interest" type="text" required />
+                    <div class="invalid-feedback">Please enter a subject.</div>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label" for="contactNumber">Contact Number</label>
@@ -181,16 +163,11 @@
                     <div class="invalid-feedback">Please enter a valid email.</div>
                   </div>
                   <div class="col-12">
-                    <label class="form-label" for="preferredSlot">Preferred Trial Slot</label>
-                    <input class="form-control" id="preferredSlot" name="preferred_trial_slot" type="text" placeholder="e.g. Saturday afternoon" />
-                  </div>
-                  <div class="col-12">
                     <label class="form-label" for="message">Message</label>
                     <textarea class="form-control" id="message" name="message" rows="4" placeholder="Share your child's current learning needs"></textarea>
                   </div>
-                  <div class="col-12 d-flex flex-column flex-sm-row gap-3">
+                  <div class="col-12">
                     <button class="btn btn-primary btn-micro px-4" type="submit">Submit Enquiry</button>
-                    <a class="btn btn-outline-primary btn-micro px-4" href="https://wa.me/6597533888" target="_blank" rel="noopener noreferrer">WhatsApp Instead</a>
                   </div>
                 </div>
               </form>
