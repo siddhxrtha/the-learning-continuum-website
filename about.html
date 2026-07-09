@@ -56,6 +56,12 @@
         z-index: 1;
       }
 
+      .about-hero .hero-badge {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.36);
+      }
+
       .about-hero-image {
         width: 100%;
         min-height: 360px;
@@ -136,6 +142,20 @@
         border-radius: 1.25rem;
         object-fit: cover;
         box-shadow: 0 18px 35px rgba(15, 33, 61, 0.14);
+      }
+
+      .founder-landscape {
+        display: block;
+        width: 100%;
+        max-width: 860px;
+        height: clamp(260px, 32vw, 400px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+        border-radius: 1.25rem;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: 0 14px 30px rgba(15, 33, 61, 0.12);
       }
 
       .pillar-icon {
@@ -332,7 +352,7 @@
         <div class="row g-4 g-lg-5 align-items-center">
           <div class="col-lg-6">
             <img
-              src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80"
+              src="assets/images/3.jpeg"
               alt="Students studying together in a learning space"
               class="about-story-image"
             />
@@ -389,9 +409,12 @@
     <!-- FOUNDER MESSAGE -->
     <section id="founders-message" class="section-space pt-0">
       <div class="container">
-        <div class="row g-4 g-lg-5 align-items-center">
-          <div class="col-lg-7">
-            <article class="about-section-card p-4 p-lg-5 h-100">
+        <article class="about-section-card p-4 p-lg-5">
+          <img
+            src="assets/images/1.jpeg"
+            alt="Founder of The Learning Continuum"
+            class="founder-landscape"
+          />
               <p class="programmes-kicker mb-2">Our Story</p>
               <h2 class="fw-bold mb-3">Founder’s Message</h2>
               <p class="mb-3">
@@ -419,16 +442,7 @@
                 with parents in this journey and to celebrate every milestone,
                 from improved confidence to excellent examination outcomes.”
               </p>
-            </article>
-          </div>
-          <div class="col-lg-5">
-            <img
-              src="assets/images/mr.jpeg"
-              alt="Founder of The Learning Continuum"
-              class="founder-portrait"
-            />
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -488,7 +502,7 @@
     </section>
 
     <!-- LEARNING PILLARS -->
-    <section class="section-space bg-light">
+    <section id="teaching-philosophy" class="section-space bg-light">
       <div class="container">
         <div class="text-center mb-5">
           <p class="programmes-kicker mb-2">How We Guide Students</p>
@@ -672,29 +686,6 @@
                 Trusted since 2006 for PSLE, N Level and O Level preparation
                 with structured teaching and small classes.
               </p>
-              <div class="footer-socials">
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  ><i class="bi bi-facebook"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  ><i class="bi bi-instagram"></i
-                ></a>
-                <a
-                  href="https://www.youtube.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="YouTube"
-                  ><i class="bi bi-youtube"></i
-                ></a>
-              </div>
             </div>
             <div class="col-6 col-lg-2">
               <h3 class="footer-grid-title">Quick Links</h3>
@@ -716,7 +707,7 @@
             </div>
             <div class="col-lg-3">
               <h3 class="footer-grid-title">Contact</h3>
-              <ul class="footer-link-list mb-3">
+              <ul class="footer-link-list">
                 <li><a href="tel:+6597533888">+65 9753 3888</a></li>
                 <li>
                   <a href="mailto:hello@thelearningcontinuum.sg"
@@ -732,21 +723,6 @@
                   >
                 </li>
               </ul>
-              <form class="js-newsletter-form" novalidate>
-                <label class="small fw-semibold mb-2" for="newsletter-about"
-                  >Newsletter Updates</label
-                >
-                <div class="input-group newsletter-input-group">
-                  <input
-                    id="newsletter-about"
-                    type="email"
-                    class="form-control"
-                    placeholder="Email address"
-                    required
-                  />
-                  <button class="btn btn-primary" type="submit">Join</button>
-                </div>
-              </form>
             </div>
           </div>
           <div class="row mt-3">
