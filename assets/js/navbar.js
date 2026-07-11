@@ -45,6 +45,14 @@ function initSiteNavbar(navRoot) {
   }
 
   function syncNavHeightVar() {
+    if (
+      collapseElement &&
+      collapseElement.classList.contains("show") &&
+      window.matchMedia("(max-width: 1199.98px)").matches
+    ) {
+      return;
+    }
+
     var navHeight = Math.ceil(navRoot.getBoundingClientRect().height);
     if (!navHeight) {
       return;
@@ -60,6 +68,21 @@ function initSiteNavbar(navRoot) {
     syncNavHeightVar();
   });
   window.addEventListener("load", syncNavHeightVar);
+
+  if (collapseElement) {
+    collapseElement.addEventListener("hidden.bs.collapse", syncNavHeightVar);
+  }
+
+  if ("ResizeObserver" in window) {
+    var navResizeObserver = new ResizeObserver(function () {
+      syncNavHeightVar();
+    });
+    navResizeObserver.observe(navRoot);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncNavHeightVar);
+  }
 
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {

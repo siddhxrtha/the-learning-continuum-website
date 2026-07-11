@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400&display=swap"
       rel="stylesheet"
     />
     <link
@@ -26,6 +26,7 @@
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/redesign.css" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -77,49 +78,19 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div
-              class="hero-slide"
-              style="
-                --hero-bg: url(&quot;https://cashmoneysid.sirv.com/Images/the-learning-continuum/img01.jpg&quot;);
-                --hero-pos: center center;
-              "
-            ></div>
+            <img class="hero-slide" src="assets/images/num1.jpeg" alt="The Learning Continuum students and teacher" />
           </div>
           <div class="carousel-item">
-            <div
-              class="hero-slide"
-              style="
-                --hero-bg: url(&quot;https://www.explico.sg/blog/wp-content/uploads/2022/04/Explic-image-blog14343-1024x683.jpg&quot;);
-                --hero-pos: center center;
-              "
-            ></div>
+            <img class="hero-slide" src="assets/images/num2.jpeg" alt="Students learning at The Learning Continuum" loading="lazy" />
           </div>
           <div class="carousel-item">
-            <div
-              class="hero-slide"
-              style="
-                --hero-bg: url(&quot;https://www.teachermagazine.com/assets/images/teacher/Insights-from-PISA-Singapore%E2%80%99s-home-based-learning-initiative.jpg&quot;);
-                --hero-pos: center center;
-              "
-            ></div>
+            <img class="hero-slide" src="assets/images/num3.jpeg" alt="The Learning Continuum classroom" loading="lazy" />
           </div>
           <div class="carousel-item">
-            <div
-              class="hero-slide"
-              style="
-                --hero-bg: url(&quot;https://miro.medium.com/1*8UMegIPQJa2A7V757K8lng.jpeg&quot;);
-                --hero-pos: center center;
-              "
-            ></div>
+            <img class="hero-slide" src="assets/images/num4.jpeg" alt="Students at The Learning Continuum" loading="lazy" />
           </div>
           <div class="carousel-item">
-            <div
-              class="hero-slide"
-              style="
-                --hero-bg: url(&quot;https://isomer-user-content.by.gov.sg/85/c935ebd4-e5c5-495a-a195-ead381d25b8e/increased_attention.jpg&quot;);
-                --hero-pos: center center;
-              "
-            ></div>
+            <img class="hero-slide" src="assets/images/num5.jpeg" alt="Learning activities at The Learning Continuum" loading="lazy" />
           </div>
         </div>
         <button
@@ -295,21 +266,6 @@
               </p>
             </article>
           </div>
-          <div class="col-md-6 col-xl-4">
-            <article
-              class="why-card h-100 p-4 js-reveal"
-              data-reveal-delay="270"
-            >
-              <div class="why-card-icon" aria-hidden="true">
-                <i class="bi bi-graph-up-arrow"></i>
-              </div>
-              <h3 class="h4 mb-2">Progress Tracking</h3>
-              <p class="mb-0">
-                Regular updates to parents on milestones, strengths, and next
-                steps.
-              </p>
-            </article>
-          </div>
         </div>
       </div>
     </section>
@@ -388,7 +344,7 @@
           </div>
         </div>
         <div class="row g-4 text-center">
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-4">
             <article
               class="trust-premium-card h-100 js-trust-card js-reveal"
               data-delay="0"
@@ -406,7 +362,7 @@
               </p>
             </article>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-4">
             <article
               class="trust-premium-card h-100 js-trust-card js-reveal"
               data-delay="90"
@@ -424,7 +380,7 @@
               </p>
             </article>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="col-sm-6 col-lg-4">
             <article
               class="trust-premium-card h-100 js-trust-card js-reveal"
               data-delay="180"
@@ -442,24 +398,6 @@
               </p>
             </article>
           </div>
-          <div class="col-sm-6 col-lg-3">
-            <article
-              class="trust-premium-card h-100 js-trust-card js-reveal"
-              data-delay="270"
-              data-reveal-delay="270"
-            >
-              <div class="trust-premium-icon" aria-hidden="true">
-                <i class="bi bi-person-badge-fill"></i>
-              </div>
-              <h3 class="h5 fw-bold mb-2 trust-card-heading">
-                Qualified Tutors
-              </h3>
-              <p class="mb-0 trust-support-text">
-                Degree-holding educators with structured, small-group teaching
-                expertise.
-              </p>
-            </article>
-          </div>
         </div>
       </div>
     </section>
@@ -469,8 +407,8 @@
         <div class="row g-4 g-lg-5 align-items-center">
           <div class="col-lg-6 js-reveal" data-reveal="left">
             <img
-              class="Sirv img-fluid rounded-4 shadow-sm w-100 result-image"
-              data-src="https://cashmoneysid.sirv.com/Images/the-learning-continuum/img01.jpg"
+              class="img-fluid rounded-4 shadow-sm w-100 result-image"
+              src="assets/images/students-class.jpeg"
               alt="Students celebrating graduation success"
             />
           </div>
@@ -501,7 +439,7 @@
           <div class="col-lg-6 js-reveal" data-reveal="left">
             <img
               class="img-fluid rounded-4 shadow-sm w-100 journey-image"
-              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1280&q=80"
+              src="assets/images/6.jpeg"
               alt="Student writing notes during lesson"
             />
           </div>
@@ -1765,18 +1703,13 @@
             <div class="col-lg-3">
               <h3 class="footer-grid-title">Contact</h3>
               <ul class="footer-link-list">
-                <li><a href="tel:+6597533888">+65 9753 3888</a></li>
-                <li>
-                  <a href="mailto:hello@thelearningcontinuum.sg"
-                    >hello@thelearningcontinuum.sg</a
-                  >
-                </li>
+                <li><a href="tel:+6597533888">Mr Lim: +65 9753 3888</a></li>
                 <li>
                   <a
                     href="https://maps.google.com/?q=632+Ang+Mo+Kio+Ave+4,+%2301-964,+Singapore+560632"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >632 Ang Mo Kio Ave 4, #01-964, Singapore 560632</a
+                    >632 Ang Mo Kio Ave 4, #01-964, Singapore 560632 (2nd level - above Subway)</a
                   >
                 </li>
               </ul>

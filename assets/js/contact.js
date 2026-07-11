@@ -23,11 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "Level: " + getFieldValue("level"),
       "Subject Interest: " + getFieldValue("subject"),
       "Contact Number: " + getFieldValue("contactNumber"),
-      "Email: " + getFieldValue("email"),
       "Message: " + (getFieldValue("message") || "-")
     ].join("\n");
 
-    var whatsappUrl = "https://wa.me/6589103647?text=" + encodeURIComponent(message);
+    var whatsappUrl = "https://wa.me/6597533888?text=" + encodeURIComponent(message);
     console.log(whatsappUrl);
     window.open(whatsappUrl, "_blank");
   });
