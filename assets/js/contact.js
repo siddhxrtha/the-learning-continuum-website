@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Student Name: " + getFieldValue("studentName"),
       "Level: " + getFieldValue("level"),
       "Subject Interest: " + getFieldValue("subject"),
-      "Contact Number: " + getFieldValue("contactNumber"),
+      "Parent's Contact Number: " + getFieldValue("contactNumber"),
       "Message: " + (getFieldValue("message") || "-")
     ].join("\n");
 
