@@ -36,6 +36,10 @@ body {
   background: var(--color-cream-paper);
   font-family: var(--font-inter);
 }
+.scroll-progress {
+  background: linear-gradient(90deg, var(--color-accent-blue) 0%, #3f7fbd 50%, var(--color-forest-ink) 100%) !important;
+  box-shadow: 0 0 10px rgba(36, 95, 158, .24) !important;
+}
 ::selection { color: var(--color-cream-paper); background: var(--color-accent-blue); }
 .container { width: min(100%, var(--page-max)); padding-inline: clamp(16px, 3vw, 32px); }
 .section-space { padding-block: clamp(64px, 8vw, 96px); }
@@ -203,6 +207,10 @@ p, li:not(.nav-item), label, input, select, textarea, .btn, .nav-link { font-fam
 .gallery-item { margin-bottom: clamp(16px, 2vw, 24px); overflow: hidden; border: 1px solid var(--color-forest-ink); border-radius: var(--radius-card); box-shadow: none; }
 .gallery-item img { transition: transform .65s var(--ease-studio); }
 .gallery-item:hover img { transform: scale(1.035); }
+.gallery-card {
+  cursor: default !important;
+  pointer-events: none;
+}
 
 /* Reviews and data */
 .testimonials-google-section h2, .testimonials-google-section h3, .testimonials-google-section p { color: var(--color-forest-ink); }
@@ -882,4 +890,118 @@ body:has(.programmes-section) .content-panel {
     box-shadow: 4px 4px 0 rgba(169, 67, 22, .18) !important;
   }
   .student-journey-card .badge { width: 100%; justify-content: center; }
+}
+
+/* Contact cards and enquiry form — unified current theme */
+.contact-info-card,
+.contact-form-shell {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-forest-ink) !important;
+  background: var(--color-cream-paper) !important;
+  border: 2px solid var(--color-accent-blue) !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: 7px 7px 0 rgba(169, 67, 22, .18) !important;
+  transition: transform .3s var(--ease-studio), box-shadow .3s ease !important;
+}
+.contact-info-card {
+  min-height: 100%;
+  padding: clamp(26px, 3vw, 34px) !important;
+}
+.contact-info-card::before,
+.contact-form-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 7px;
+  background: var(--color-forest-ink) !important;
+}
+.contact-info-card::after,
+.contact-form-shell::after { content: none !important; }
+.contact-info-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 rgba(169, 67, 22, .24) !important;
+}
+.contact-info-card h2,
+.contact-info-card p,
+.contact-info-card a {
+  color: var(--color-forest-ink) !important;
+}
+.contact-info-icon {
+  width: 50px !important;
+  height: 50px !important;
+  display: grid;
+  place-items: center;
+  color: #ffffff !important;
+  background: var(--color-accent-blue) !important;
+  border: 1px solid var(--color-accent-blue) !important;
+  border-radius: var(--radius-button) !important;
+  box-shadow: 4px 4px 0 rgba(169, 67, 22, .18);
+}
+.contact-info-icon i { color: #ffffff !important; }
+
+.contact-enquiry-section {
+  background: var(--color-cream-paper) !important;
+}
+.contact-form-shell {
+  padding: clamp(28px, 5vw, 52px) !important;
+}
+.contact-form-shell h2 {
+  color: var(--color-forest-ink) !important;
+}
+.contact-form-shell .programmes-subtitle {
+  color: rgba(169, 67, 22, .76) !important;
+}
+#enquiry-form .form-label {
+  color: var(--color-forest-ink) !important;
+}
+#enquiry-form .form-control,
+#enquiry-form .form-select {
+  min-height: 54px;
+  padding: 12px 14px;
+  color: var(--color-forest-ink) !important;
+  background: var(--color-cream-paper) !important;
+  border: 2px solid rgba(36, 95, 158, .52) !important;
+  border-radius: var(--radius-button) !important;
+  box-shadow: none !important;
+}
+#enquiry-form .form-control:focus,
+#enquiry-form .form-select:focus {
+  border-color: var(--color-accent-blue) !important;
+  box-shadow: 4px 4px 0 rgba(169, 67, 22, .2) !important;
+}
+#enquiry-form textarea.form-control {
+  min-height: 160px;
+}
+#enquiry-form .btn-primary {
+  color: var(--color-cream-paper) !important;
+  background: var(--color-accent-blue) !important;
+  border: 1px solid var(--color-accent-blue) !important;
+}
+#enquiry-form .btn-primary:hover,
+#enquiry-form .btn-primary:focus-visible {
+  box-shadow: 3px 3px 0 var(--color-forest-ink) !important;
+}
+
+/* Floating WhatsApp: official green box with white mark. */
+.floating-whatsapp {
+  color: #ffffff !important;
+  background: #25d366 !important;
+  border: 1px solid #169a48 !important;
+  box-shadow: 4px 4px 0 rgba(22, 154, 72, .2) !important;
+}
+.floating-whatsapp i { color: #ffffff !important; }
+.floating-whatsapp:hover,
+.floating-whatsapp:focus {
+  color: #ffffff !important;
+  background: #1fbd5b !important;
+  box-shadow: 5px 5px 0 rgba(22, 154, 72, .25) !important;
+}
+
+@media (max-width: 767.98px) {
+  .contact-info-card,
+  .contact-form-shell {
+    box-shadow: 4px 4px 0 rgba(169, 67, 22, .18) !important;
+  }
+  .contact-form-shell { padding: 28px 20px !important; }
 }
