@@ -744,10 +744,8 @@ body:has(.programmes-section) .content-panel {
 #founders-message .about-section-card p {
   color: rgba(169, 67, 22, .82) !important;
 }
-#our-story .about-story-card:hover,
 .mv-card:hover,
-.mv-card:focus-within,
-#founders-message .about-section-card:hover {
+.mv-card:focus-within {
   transform: translate(-4px, -4px) !important;
   border-color: var(--color-accent-blue) !important;
   box-shadow: 10px 10px 0 rgba(169, 67, 22, .24) !important;
