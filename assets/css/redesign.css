@@ -1003,3 +1003,188 @@ body:has(.programmes-section) .content-panel {
   }
   .contact-form-shell { padding: 28px 20px !important; }
 }
+
+/* Mobile responsive hardening */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+main,
+section,
+header,
+footer,
+.container,
+.container-fluid,
+.row > * {
+  min-width: 0;
+}
+
+/* Preserve the full schedule and let phone users pan to Day and Time. */
+.schedule-scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+  color: var(--color-accent-blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.schedule-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.schedule-card .table-responsive {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-inline: contain;
+  touch-action: pan-x pan-y;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-blue) rgba(36, 95, 158, 0.12);
+}
+
+.schedule-card .table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.schedule-card .table-responsive::-webkit-scrollbar-track {
+  background: rgba(36, 95, 158, 0.12);
+}
+
+.schedule-card .table-responsive::-webkit-scrollbar-thumb {
+  background: var(--color-accent-blue);
+  border-radius: 999px;
+}
+
+.schedule-card .schedule-table {
+  width: 100%;
+  min-width: 760px !important;
+  margin-bottom: 0;
+}
+
+.schedule-card .schedule-table th,
+.schedule-card .schedule-table td {
+  white-space: nowrap;
+}
+
+@media (max-width: 767.98px) {
+  .section-space {
+    padding-block: 52px;
+  }
+
+  .schedule-hero-shell h1,
+  .schedule-section-title,
+  .inner-hero h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem) !important;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .schedule-hero-shell,
+  .inner-hero-shell {
+    width: 100%;
+    padding-inline: 18px;
+  }
+
+  .schedule-card .schedule-table th,
+  .schedule-card .schedule-table td {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .floating-actions {
+    right: max(8px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+
+  .floating-whatsapp,
+  .scroll-top-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .footer-map {
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .footer-bottom .d-flex {
+    align-items: flex-start !important;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container,
+  .container-fluid {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .site-footer-extended .footer-contact-shell {
+    padding: 26px 20px !important;
+  }
+
+  .site-footer-extended .footer-contact-shell > .row:first-child > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-footer-extended .footer-contact-shell > .row:first-child {
+    row-gap: 1.75rem;
+  }
+
+  .site-footer-extended .footer-contact-shell h2 {
+    max-width: 100%;
+    font-size: clamp(1.55rem, 7.5vw, 2rem) !important;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer-extended .footer-kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  .site-footer-extended .footer-lead,
+  .site-footer-extended .footer-link-list a {
+    font-size: 1rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+
+  .site-footer-extended .footer-grid-title {
+    margin-bottom: 0.6rem;
+    font-size: 1.25rem;
+  }
+
+  .site-footer-extended .footer-brand-badge {
+    max-width: 100%;
+  }
+
+  .site-footer-extended .footer-brand-logo {
+    height: 40px;
+    max-width: 100%;
+  }
+
+  .footer-map-shell {
+    padding-top: 1.1rem;
+  }
+}
