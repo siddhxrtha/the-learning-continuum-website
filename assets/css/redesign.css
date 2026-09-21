@@ -214,7 +214,7 @@ p, li:not(.nav-item), label, input, select, textarea, .btn, .nav-link { font-fam
 
 /* Shared portrait video */
 site-video-section { display: block; }
-.video-section { background: var(--color-sticky-note-teal); }
+.video-section { background: #ffffff; }
 .video-frame {
   display: block;
   position: relative;
