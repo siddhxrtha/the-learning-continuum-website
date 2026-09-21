@@ -215,6 +215,9 @@ p, li:not(.nav-item), label, input, select, textarea, .btn, .nav-link { font-fam
 /* Shared portrait video */
 site-video-section { display: block; }
 .video-section { background: #ffffff; }
+@media (min-width: 992px) {
+  .video-subtitle-wide .programmes-subtitle { max-width: none; }
+}
 .video-frame {
   display: block;
   position: relative;
