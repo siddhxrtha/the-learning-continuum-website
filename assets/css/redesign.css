@@ -212,6 +212,46 @@ p, li:not(.nav-item), label, input, select, textarea, .btn, .nav-link { font-fam
   pointer-events: none;
 }
 
+/* Shared portrait video */
+site-video-section { display: block; }
+.video-section { background: var(--color-sticky-note-teal); }
+.video-frame {
+  display: block;
+  position: relative;
+  width: min(100%, 360px);
+  margin-inline: auto;
+  overflow: hidden;
+  background: var(--color-cream-paper);
+  border: 1px solid var(--color-forest-ink);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-subtle);
+}
+.video-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+.video-frame:focus-visible {
+  outline: 3px solid var(--color-accent-blue);
+  outline-offset: 4px;
+}
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 56px;
+  color: var(--color-cream-paper);
+  background: var(--color-accent-blue);
+  border-radius: var(--radius-card);
+  font-size: 2rem;
+}
+
 /* Reviews and data */
 .testimonials-google-section h2, .testimonials-google-section h3, .testimonials-google-section p { color: var(--color-forest-ink); }
 .reviews-track { gap: 20px; padding-block: 8px 24px; }
